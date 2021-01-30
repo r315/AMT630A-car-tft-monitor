@@ -1,0 +1,5 @@
+---- hw_upResistance Matches (4 in 3 files) ----
+AdcKeyPad.c (getuserinput\key):	       #if hw_upResistance
+KeypadMap.h (getuserinput\key):#if hw_upResistance 
+KeypadMap.h (getuserinput\key):#define hw_keyAdcVal(rVal)  ((UINT)(4096*((float)rVal*hw_keyVoltage/(((float)rVal+hw_upResistance)*3.3))))>>4
+Prj_ARK18X9_SDK_DEMO.h (userconfig\prj config):#define hw_upResistance      12000     //上拉电阻值  12k

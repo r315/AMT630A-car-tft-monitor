@@ -1,0 +1,5 @@
+---- ColorSysChangeBLOffEn Matches (4 in 4 files) ----
+GetSysMsg.c (kernel):		#ifdef ColorSysChangeBLOffEn
+Interrupt.c (kernel):	#ifdef ColorSysChangeBLOffEn
+Prj_AMT_43D_SDK_DEMO.h (userconfig\prj config)://#define ColorSysChangeBLOffEn //制式切换黑屏开关
+Prj_AMT_7D_SDK_DEMO.h (userconfig\prj config)://#define ColorSysChangeBLOffEn //制式切换黑屏开关

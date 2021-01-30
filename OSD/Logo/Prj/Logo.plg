@@ -1,0 +1,17 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\AMT\Version\AMT_CAR_A_CStyle\AMT_CAR_A_CStyle_V1.2_1207018\OSD\Logo\Prj\Logo.uvproj
+Project File Date:  07/19/2012
+
+<h2>Output:</h2>
+Build target 'Logo'
+compiling Osd_LogoFontDat.c...
+..\Osd_LogoFontDat.c(1): warning C318: can't open file 'DataType.h'
+..\Osd_LogoFontDat.c(2): warning C318: can't open file 'systemConfig.h'
+linking...
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+Program Size: data=0.0 xdata=0 code=0
+"..\Hex\Logo" - 0 Error(s), 3 Warning(s).

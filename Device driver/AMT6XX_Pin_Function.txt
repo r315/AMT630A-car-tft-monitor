@@ -1,0 +1,170 @@
+/*
+note: 此文档专门用于AMT6XX系列所有芯片IO引脚的说明。
+*/
+
+
+(一)AMT627
+
+PIN             TYPE             DESCRIPTION
+4               IO               P14/INT3
+5               IO               P11/T1
+6               IO               SPI _CLK/GPIO8
+7               IO               SPI _CS/GPIO9/E2P_SCL
+8               IO               SPI_SI/GPIO10
+9               IO               SPI_SO/GPIO11/E2P_SDA
+17              IO               P01/REMOTE
+18              IO               P20/CKH3
+20              IO               STHR/GPIO12
+21              IO               (BOOT_UART)/STVL
+24              IO               (BOOT_SPI)/TCPH1(LD)/GPIO13
+27              IO               (BOOT_OTP)/TCPH4
+29              IO               CKH2/GPIO14
+30              IO               CKV/GPIO15
+35              IO               P31/TCPH2
+36              IO               STVR/P06
+37              IO               DC_PWM/P07
+38              IO               AC_PWM/P16
+39              IO               BIAS_DRV/P17
+47              IO               P04/SDA1
+48              IO               P05/SCL1
+49              IO               PWMB/P26
+50              IO               PWMA/P27
+51              IO               P02/RXD0
+54              IO               P03/TXD0/ AD0
+55              IO               P12/T2EX/ AD1
+56              IO               P13/T2/RXD1/ AD2
+57              IO               P15/INT4/TXD1/ AD3
+
+
+(二)AMT628
+
+PIN             TYPE             DESCRIPTION
+1               IO               ITU_D0_P/GPIO0/G2/PWMA
+2               IO               ITU_D1_P/GPIO1/G3/PWMB
+3               IO               ITU_D2_P/GPIO2/G4/CPU_RST
+4               IO               ITU_D3_P/GPIO3/G5/CPU_CS
+5               IO               ITU_D4_P/GPIO4/G6/CPU_RD
+6               IO               ITU_D5_P/GPIO5/G7/CPU_WR
+7               IO               ITU_D6_P/GPIO6
+8               IO               ITU_D7_P/GPIO7
+9               IO               ITU_CLK_P/P00
+10              IO               P14/INT3_N/DC_PWM/STVR/G0/ITU_D6/ITU601_HSYN
+11              IO               P11/T1/CKV/PMODE/SRGB_DEN/G1/ITU_D7/ITU601_VSYN
+12              IO               SF_CLK/PCLK/GPIO8
+13              IO               SF_CS/PCEB/GPIO9/E2P_SCL
+14              IO               SPI_SI/PEN/GPIO10
+15              IO               SPI_SO/PDATA/GPIO11/E2P_SDA
+30              IO               R3/SD3/CPU_D1/P20/STVR/SD0/ITU_D0/CKH3
+31              IO               R4/SD4/CPU_D2/P21/PWMA/SD1/ITU_D1
+32              IO               R5/SD5/CPU_D3/P22/PWMB/SD2/ITU_D2
+33              IO               R6/SD6/CPU_D4/P23
+34              IO               R7/SD7/CPU_D5/P24
+36              IO               STHR/GPIO12/SD3/ITU_D3
+37              IO               (BOOT_UART)/STVL/VSYN/CPU_RD/SRGB_V/CPU_D6/SD4/ITU_D4
+41              IO               (BOOT_SPI)/TCPH1(LD)/GPIO13/SD0/R0/SD5/ITU_D5
+44              IO               (BOOT_OTP)/TCPH4/DOE/CPU_RS/SRGB_DEN/SD1/SD7/ITU_D7
+46              IO               G0/CKH2/GPIO14/CPU_RST/ITU_D1/SD1
+47              IO               G1/CKV/GPIO15/ITU_D2/SD2
+48              IO               G2/CPU_D6/GPIO16
+49              IO               G3/CPU_D7/GPIO17
+50              IO               G4/CPU_D8/GPIO18
+55              IO               G5/CPU_D9/GPIO19/STHR/R1
+56              IO               G6/CPU_D10/GPIO20/SCL0/PWMA/B0/RXD2
+57              IO               G7/CPU_D11/GPIO21/SDA0/PWMB/B1/TXD2
+58              IO               B0/P30/CTR
+59              IO               B1/P31/TCPH2/SRGB_DEN
+60              IO               B2/P32/CPU_D12
+61              IO               B3/P33/CPU_D13
+62              IO               B4/P34/CPU_D14
+63              IO               B5/P35/CPU_D15
+64              IO               B6/P36/CPU_D16
+65              IO               B7/P37/CPU_D17
+66              IO               STVR/P06/SRGB_H
+67              IO               DC_PWM/P07
+68              IO               AC_PWM/P16
+69              IO               BIAS_DRV/P17/SRGB_V
+77              IO               P04/SDA
+78              IO               P05/SCL
+79              IO               PWMB/P26
+80              IO               PWMA/P27
+81              IO               P02/RXD0
+85              IO               P03/TXD0/AD0
+86              IO               P10/T0/AD1
+87              IO               P12/T2EX/AD2
+88              IO               P13/T2/RXD1/AD3
+
+
+(三)AMT629
+
+PIN             TYPE             DESCRIPTION
+1               IO               GPIO0/PWMA
+2               IO               P14/INT3_N/DC_PWM/STVR
+3               IO               P11/T1/CKV/SRGB_DEN
+4               IO               SF_CLK/GPIO8
+5               IO               SF_CS/GPIO9/E2P_SCL
+6               IO               SPI_SI/GPIO10
+7               IO               SPI_SO/GPIO11/E2P_SDA
+12              IO               P01/REMOTE
+13              IO               P20/STVR/SD0/ITU_D0/CKH3
+14              IO               P21/PWMA/SD1/ITU_D1
+15              IO               P22/PWMB/SD2/ITU_D2
+17              IO               STHR/GPIO12/SD3/ITU_D3
+18              IO               BOOT_UART/STVL/SD4/ITU_D4
+21              IO               BOOT_SPI/TCPH1(LD)/GPIO13/SD5/ITU_D5
+25              IO               CKV/GPIO15
+28              IO               BIAS_DRV/P17/SRGB_V
+35              IO               P04/SDA1
+36              IO               P05/SCL1
+38              IO               P10/T2EX/AD0
+39              IO               P13/T2/RXD1/ AD1
+40              IO               P15/INT4/TXD1/AD3
+
+
+(四)AMT630
+
+PIN             TYPE             DESCRIPTION
+1               IO               ITU_D0_P/GPIO0/G2/PWMA
+2               IO               ITU_D1_P/GPIO1/G3/PWMB
+3               IO               ITU_D2_P/GPIO2/G4/CPU_RST
+4               IO               ITU_D3_P/GPIO3/G5/CPU_CS
+5               IO               ITU_D4_P/GPIO4/G6/CPU_RD
+6               IO               ITU_D5_P/GPIO5/G7/CPU_WR
+7               IO               P14/INT3_N/DC_PWM/STVR/G0/ITU_D6/ITU601_HSYN
+8               IO               P11/T1/CKV/PMODE/SRGB_DEN/G1/ITU_D7/ITU601_VSYN
+9               IO               SF_CLK/PCLK/GPIO8
+10              IO               SF_CS/PCEB/GPIO9/E2P_SCL
+11              IO               SPI_SI/PEN/GPIO10
+12              IO               SPI_SO/PDATA/GPIO11/E2P_SDA
+17              IO               P01/REMOTE
+19              IO               R3/SD3/CPU_D1/P20/STVR/SD0/ITU_D0/CKH3
+20              IO               R4/SD4/CPU_D2/P21/PWMA/SD1/ITU_D1
+21              IO               R5/SD5/CPU_D3/P22/PWMB/SD2/ITU_D2
+22              IO               R6/SD6/CPU_D4/P23
+23              IO               R7/SD7/CPU_D5/P24
+25              IO               (BOOT_UART)/STVL/VSYN/CPU_RD/SRGB_V/CPU_D6/SD4/ITU_D4
+28              IO               (BOOT_SPI)/TCPH1(LD)/GPIO13/SD0/R0/SD5/ITU_D5
+31              IO               (BOOT_OTP)/TCPH4/DOE/CPU_RS/SRGB_DEN/SD1/SD7/ITU_D7
+37              IO               G5/CPU_D9/GPIO19/STHR/R1
+38              IO               G6/CPU_D10/GPIO20/SCL0/PWMA/B0/RXD2
+39              IO               G7/CPU_D11/GPIO21/SDA0/PWMB/B1/TXD2
+40              IO               B2/P32/CPU_D12
+41              IO               B3/P33/CPU_D13
+42              IO               B4/P34/CPU_D14
+43              IO               B5/P35/CPU_D15
+44              IO               B6/P36/CPU_D16
+45              IO               B7/P37/CPU_D17
+46              IO               DC_PWM/P07
+47              IO               BIAS_DRV/P17/SRGB_V
+49              IO               P04/SDA1
+50              IO               P05/SCL1
+53              IO               P12/T2EX/AD1
+54              IO               P13/T2/RXD1/AD2
+55              IO               P15/INT4/TXD1/AD3
+
+
+
+
+
+
+
+

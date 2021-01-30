@@ -1,0 +1,53 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        02/28/2013  16:24:30  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\APP SOFTWARE\KEIL\C51\BIN\BL51.EXE ..\Hex\Osd_LogoFontDat.obj TO ..\Hex\Logo PRINT (..\List\Logo.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ..\Hex\Osd_LogoFontDat.obj (OSD_LOGOFONTDAT)
+
+
+LINK MAP OF MODULE:  ..\Hex\Logo (OSD_LOGOFONTDAT)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     2871H     UNIT         ?CO?OSD_LOGOFONTDAT
+
+
+
+OVERLAY MAP OF MODULE:   ..\Hex\Logo (OSD_LOGOFONTDAT)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+
+
+SYMBOL TABLE OF MODULE:  ..\Hex\Logo (OSD_LOGOFONTDAT)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        OSD_LOGOFONTDAT
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0000H         PUBLIC        LogoBitMapPattle_LOGO1
+  C:1220H         PUBLIC        LogoBitMapPattle_LOGO2
+  C:0020H         PUBLIC        LogoDatBuf_LOGO1
+  C:1221H         PUBLIC        LogoDatBuf_LOGO2
+  -------         ENDMOD        OSD_LOGOFONTDAT
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?CO?OSD_LOGOFONTDAT
+
+*** WARNING L10: CANNOT DETERMINE ROOT SEGMENT
+
+Program Size: data=0.0 xdata=0 code=10353
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)
