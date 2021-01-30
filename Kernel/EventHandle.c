@@ -1,14 +1,14 @@
 /***********************************************************************
-*Copyright (C) 2005 ÉîÛÚ°¬¿Æ´´ÐÂÓÐÏÞ¹«Ë¾²úÆ·Ó¦ÓÃÒ»²¿
+*Copyright (C) 2005 ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½Æ·Ó¦ï¿½ï¿½Ò»ï¿½ï¿½
 * All rights reserved.
 
-*File name: ¡¡ ArkRun.c
-*Version:    ¡¡0.1
+*File name: ï¿½ï¿½ ArkRun.c
+*Version:    ï¿½ï¿½0.1
 *Author:       cjinzong
 *update:       2011-11-26
 
 *Description:
-              ÏµÍ³¸÷Ä£¿éÔËÐÐÂß¼­¡£
+              ÏµÍ³ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß¼ï¿½ï¿½ï¿½
 *History:  
 
 ************************************************************************/
@@ -42,8 +42,8 @@
 *state:      allright
 
 *description:   
-          ´¦ÀíÓÃ»§ÏûÏ¢£¬Ö÷ÒªÊÇ°´¼üºÍÒ£¿ØÆ÷¡£
-          ÐèÒª¿¼ÂÇ´Ë´¦ÊÇOSDµÄ½Ó¿Ú£¬²¢ÇÒ¿ÉÒÔÊµÏÖOSDµÄ·ç¸ñÇÐ»»¡£
+          ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Òªï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+          ï¿½ï¿½Òªï¿½ï¿½ï¿½Ç´Ë´ï¿½ï¿½ï¿½OSDï¿½Ä½Ó¿Ú£ï¿½ï¿½ï¿½ï¿½Ò¿ï¿½ï¿½ï¿½Êµï¿½ï¿½OSDï¿½Ä·ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½
 *history:
                                 
 ************************************************************/
@@ -79,8 +79,8 @@ void  OsdMsgHandle(MSG curMsg)
 *state:      allright
 
 *description:   
-          ´¦ÀíÐÅºÅµÄÏûÏ¢£¬Ö÷ÒªÓÐ´ÓÎÞÐÅºÅµ½ÓÐÐÅºÅ£¬´ÓÓÐÐÅºÅµ½ÎÞÐÅºÅ
-          ²úÉúµÄÏûÏ¢£¬ÐÅºÅÓÅÏÈ¼¶ÏûÏ¢ µÈµÈ¡£¡£
+          ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Òªï¿½Ð´ï¿½ï¿½ï¿½ï¿½ÅºÅµï¿½ï¿½ï¿½ï¿½ÅºÅ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅµï¿½ï¿½ï¿½ï¿½Åºï¿½
+          ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½È¼ï¿½ï¿½ï¿½Ï¢ ï¿½ÈµÈ¡ï¿½ï¿½ï¿½
 *history:
                                 
 ************************************************************/
@@ -88,7 +88,7 @@ void  SignalMsgHandle(MSG curMsg)
 {
     if(curMsg == MSG_SIGNAL_OK)
     { 	  
-		  /*±íÊ¾ÓÐÐÅºÅ*/
+		  /*ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Åºï¿½*/
 	      printfStr("MSG_SIGNAL_OK");
 
 	      #ifdef NoSignalEn
@@ -114,7 +114,7 @@ void  SignalMsgHandle(MSG curMsg)
 	
 	if(curMsg == MSG_NO_SIGNAL)
 	{
-	      /*±íÊ¾ÎÞÐÅºÅ*/
+	      /*ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Åºï¿½*/
 		  printfStr("MSG_NO_SIGNAL");
 		  
 		  #ifdef NoSignalSnowEn
@@ -147,8 +147,8 @@ void  SignalMsgHandle(MSG curMsg)
 *state:      allright
 
 *description:   
-         ´¦ÀíÍ¼ÏñÐ§¹ûÏûÏ¢£¬Ö÷ÒªÊÇ¸ù¾Ýµ±Ç°Í¨µÀµÄÍ¼ÏñÖÆÊ½À´ÅäÖÃ
-         ÏàÓ¦µÄÍ¼Ïñ²ÎÊý¡£ 
+         ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Òªï¿½Ç¸ï¿½ï¿½Ýµï¿½Ç°Í¨ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+         ï¿½ï¿½Ó¦ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
 *history:
                                 
 ************************************************************/
@@ -169,7 +169,7 @@ void  ColorSysMsgHandle(MSG curMsg)
 *state:      allright
 
 *description:   
-         ´¦ÀíÏµÍ³ÉèÖÃÊ±¼äÏûÏ¢£¬Ö÷ÒªÓÐ ¶¨Ê±¿ª¹Ø»ú£¬¶¨Ê±Ë¯ÃßÄ£Ê½¡£
+         ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ø»ï¿½ï¿½ï¿½ï¿½ï¿½Ê±Ë¯ï¿½ï¿½Ä£Ê½ï¿½ï¿½
          
 *history:
                                 
@@ -206,7 +206,7 @@ void  TimeMsgHandle(MSG curMsg)
 *state:      allright
 
 *description:   
-         ´¦ÀíÏµÍ³µç³ØµÄÊµÊ±µçÑ¹ÏûÏ¢¡£
+         ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½Øµï¿½ÊµÊ±ï¿½ï¿½Ñ¹ï¿½ï¿½Ï¢ï¿½ï¿½
          
 *history:
                                 
@@ -230,14 +230,14 @@ void  BatteryAdcMsgHandle(MSG curMsg)
 *state:      allright
 
 *description:   
-        ´¦ÀíÓÃ»§×Ô¶¨ÒåÏûÏ¢
+        ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
          
 *history:
                                 
 ************************************************************/
 void  UserDefinedMsgHandle(MSG curMsg)
 {
-    /*¹Ø»ú×´Ì¬ÏÂÎÞµ¹³µ*/
+    /*ï¿½Ø»ï¿½×´Ì¬ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½*/
     if(MSG_CAR_POF_GO_AHEAD ==  curMsg)
     {
          printfStr("MSG_CAR_POF_GO_AHEAD");
@@ -248,7 +248,7 @@ void  UserDefinedMsgHandle(MSG curMsg)
          ExectComd(COMD_Power); 
     }
 
-	/*¿ª»ú×´Ì¬ÏÂÎÞµ¹³µ*/
+	/*ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½ï¿½Þµï¿½ï¿½ï¿½*/
 	if(MSG_CAR_PON_GO_AHEAD ==  curMsg)
     {
          printfStr("MSG_CAR_PON_GO_AHEAD");
@@ -264,7 +264,7 @@ void  UserDefinedMsgHandle(MSG curMsg)
 		 }
     }
 
-	/*¹Ø»ú×´Ì¬ÏÂµ¹³µ*/
+	/*ï¿½Ø»ï¿½×´Ì¬ï¿½Âµï¿½ï¿½ï¿½*/
 	if(MSG_CAR_POF_REVERSING ==  curMsg)
     {
          printfStr("MSG_CAR_POF_REVERSING");
@@ -277,7 +277,7 @@ void  UserDefinedMsgHandle(MSG curMsg)
 		 g_sysSetting.Osd.dispTime= CurrentMenu->TimeOut;
     }
 
-	/*¿ª»ú×´Ì¬ÏÂµ¹³µ*/
+	/*ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½Âµï¿½ï¿½ï¿½*/
 	if(MSG_CAR_PON_REVERSING ==  curMsg)
     {
          printfStr("MSG_CAR_PON_REVERSING");
@@ -289,7 +289,7 @@ void  UserDefinedMsgHandle(MSG curMsg)
 		 ClrCarReversingEn();
 	}
 		
-	/*ÉÏµç×´Ì¬µ¹³µ*/
+	/*ï¿½Ïµï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½*/
 	if(MSG_PON_REVERSING ==  curMsg)  
 	{  
         printfStr("MSG_PON_REVERSING");
@@ -314,14 +314,14 @@ void  UserDefinedMsgHandle(MSG curMsg)
 *state:      allright
 
 *description:   
-        ´¦ÀíÀ¶ÑÀÁ¬½Ó¡¢ÊÍ·Å£¬½ÓÌý¡¢¹Ò¶ÏÏûÏ¢¡£
+        ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡ï¿½ï¿½Í·Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
          
 *history:
                                 
 ************************************************************/
+#ifdef BTEn
 void  BTMsgHandle(MSG curMsg)
 {
-    #ifdef BTEn
   	if(MSG_BT_CONN ==  curMsg)
 	{
 	    printfStr("MSG_BT_CONN");
@@ -349,9 +349,8 @@ void  BTMsgHandle(MSG curMsg)
 		g_bBTCdropFlg = FALSE;
 	    ExectComd(COMD_BTCallerDrop);
 	}
-	#endif
 }
-
+#endif
 
 
 /***********************************************************
@@ -363,7 +362,7 @@ void  BTMsgHandle(MSG curMsg)
 *state:      allright
 
 *description:   
-        ´¦ÀíÒ»Ð©²»ºÃ·ÖÀàµÄÏûÏ¢¡£
+        ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
          
 *history:
                                 

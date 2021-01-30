@@ -1,12 +1,12 @@
 /*******************************************************************************
-*Copyright (C) 2005 ÉîÛÚ°¬¿Æ´´ÐÂÓÐÏÞ¹«Ë¾²úÆ·Ó¦ÓÃÒ»²¿
+*Copyright (C) 2005 ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½Æ·Ó¦ï¿½ï¿½Ò»ï¿½ï¿½
 * All rights reserved.
 
-*File name: ¡¡ Interrupt.c	  
+*File name: ï¿½ï¿½ Interrupt.c	  
 *Version:      1.0
 *update:       2011-12-10
 *Description:
-  		   ÏµÍ³ÖÐ¶Ï´¦Àí¡£
+  		   ÏµÍ³ï¿½Ð¶Ï´ï¿½ï¿½ï¿½ï¿½ï¿½
   		   
 *History:  jordan.chen  2011/12/10    1.0    build  this  moudle
 ******************************************************************************/
@@ -33,7 +33,7 @@
 void POS_IrqServerExt0(void) interrupt 0 //ext 0  IR  interrupt
 {
 #ifdef IrDetectEn
-    /*Í¨Ñ¶Ð­ÒéÑ¡Ôñ*/
+    /*Í¨Ñ¶Ð­ï¿½ï¿½Ñ¡ï¿½ï¿½*/
     #if IR_DECODE_MODE == IR_HARDWARE
     #if IR_TYPE == NEC
 	g_ucRemoteKeyVal = POS_GetIrKeyVal();
@@ -59,7 +59,7 @@ void POS_IrqServerRec(void) interrupt 4  //Uart Receive interrupt
 
 void POS_IrqServerExt2(void) interrupt 8//ext 2  ADC  interrupt
 {   
-	/*Íâ²¿ÖÐ¶Ï2ÉèÖÃ*/
+	/*ï¿½â²¿ï¿½Ð¶ï¿½2ï¿½ï¿½ï¿½ï¿½*/
 	EXIF = EXIF&0xEF;	//IE2 = 0
 
     //adc status
@@ -71,14 +71,14 @@ void POS_IrqServerExt2(void) interrupt 8//ext 2  ADC  interrupt
 
 void POS_IrqServerExt3(void) interrupt 9//ext 3
 {   
-	/*Íâ²¿ÖÐ¶Ï3ÉèÖÃ*/
+	/*ï¿½â²¿ï¿½Ð¶ï¿½3ï¿½ï¿½ï¿½ï¿½*/
 	EXIF = EXIF&0xDF; //IE3 = 0
 }
 
 
 void POS_IrqServerExt4(void) interrupt 10//ext 4
 {   
-    /*Íâ²¿ÖÐ¶Ï4ÉèÖÃ*/
+    /*ï¿½â²¿ï¿½Ð¶ï¿½4ï¿½ï¿½ï¿½ï¿½*/
 	EXIF = EXIF&0xBF;	//IE4 = 0
 }
 
@@ -86,7 +86,7 @@ void POS_IrqServerExt4(void) interrupt 10//ext 4
 
 void POS_IrqServerExt5(void) interrupt 11//ext 5  OSD VSYN interrupt
 {   
-    /*Íâ²¿ÖÐ¶Ï5ÉèÖÃ*/
+    /*ï¿½â²¿ï¿½Ð¶ï¿½5ï¿½ï¿½ï¿½ï¿½*/
 	EXIF = EXIF&0x7F; //IE5 = 0
 }
 
@@ -102,19 +102,21 @@ void POS_IrqServerTimer0(void) interrupt 1  //timer 0
 /***********************************************************
 *name:       IrqServerTimer1(void)
 *input:      non
-*output:     ¶ÔÏµÍ³µÄÊµÊ±ÊÂ¼þ½øÐÐ¼ì²â.
+*output:     ï¿½ï¿½ÏµÍ³ï¿½ï¿½ÊµÊ±ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½.
 *update:     2011-12-23 
 *state:      try out
 
 *description:  
-         ¶ÔÏµÍ³µÄÊµÊ±ÊÂ¼þ½øÐÐ¼ì²â£¬²¢ÖÃÊÂ¼þ±êÖ¾¡£
+         ï¿½ï¿½ÏµÍ³ï¿½ï¿½ÊµÊ±ï¿½Â¼ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½â£¬ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½
 *NOTE:
-         Õâ¸ö¼ÆÊýÆ÷¿ÉÒÔ´Ó0-255·ÖÆµ
+         ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½0-255ï¿½ï¿½Æµ
 *history:
 ************************************************************/
 void POS_IrqServerTimer1(void) interrupt 3	   //timer 1
-{  
+{
+	#ifdef ColorSysChangeBLOffEn  
     static UCHAR s_ucContsyncStable = 0; 
+	#endif
     static UCHAR s_ucSysTimer;
 	
     TR1  = OFF;
@@ -123,7 +125,7 @@ void POS_IrqServerTimer1(void) interrupt 3	   //timer 1
 
 	s_ucSysTimer++;	
 	
-	/**********ÈõÐÅºÅ´¦Àí*********/
+	/**********ï¿½ï¿½ï¿½ÅºÅ´ï¿½ï¿½ï¿½*********/
 	POS_VideoProcess(VdLibCmd);
 
 	if(Is5ms(s_ucSysTimer)) 
@@ -165,7 +167,7 @@ void POS_IrqServerTimer1(void) interrupt 3	   //timer 1
 		#endif
 	}
 	
-	/**********Í¼ÏñÖÆÊ½ÏûÏ¢´¦Àí*********/
+	/**********Í¼ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½*********/
 	if(g_bGetColorSysFlg)
 	{
         #define StableTimes   20

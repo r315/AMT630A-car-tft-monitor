@@ -1,14 +1,14 @@
 /***********************************************************************
-*Copyright (C) 2005 深圳艾科创新有限公司产品应用一部
+*Copyright (C) 2005 锟斤拷锟节帮拷锟狡达拷锟斤拷锟斤拷锟睫癸拷司锟斤拷品应锟斤拷一锟斤拷
 * All rights reserved.
 
-*File name: 　 Main.c
-*Version:    　Ver-2.0
+*File name: 锟斤拷 Main.c
+*Version:    锟斤拷Ver-2.0
 *Author:       cjinzong
 *update:       2010-05-27
 
 *Description:
-               这个是系统的整个运行框架。
+               锟斤拷锟斤拷锟较低筹拷锟斤拷锟斤拷锟斤拷锟斤拷锌锟杰★拷
 *History:  
    
 ************************************************************************/
@@ -50,7 +50,7 @@ void main(void)
 		POS_ClearWatchDog();
 		
 
-	    /**********SPI驱动屏的VCOM调节*********/
+	    /**********SPI锟斤拷锟斤拷锟斤拷锟斤拷VCOM锟斤拷锟斤拷*********/
 		#ifdef SpiInitPannelEn
 	    #ifdef SpiAdjRegEn 
 		ES = ON;
@@ -59,7 +59,7 @@ void main(void)
 		#endif
 
 		
-        /**********用户输入消息处理*********/
+        /**********锟矫伙拷锟斤拷锟斤拷锟斤拷息锟斤拷锟斤拷*********/
 		curMsg = POS_GetUserInputMsg(g_bGetUserInputFlg); 
 		if(curMsg != MSG_NULL)
 		{
@@ -67,7 +67,7 @@ void main(void)
 			curMsg = MSG_NULL;
 		}
 		
-		/**********输入信号消息处理*********/
+		/**********锟斤拷锟斤拷锟脚猴拷锟斤拷息锟斤拷锟斤拷*********/
 		curMsg = POS_GetSignalMsg(g_bGetSignalFlg);
         if(curMsg != MSG_NULL)
 		{
@@ -75,7 +75,7 @@ void main(void)
 			curMsg = MSG_NULL;
 		}
 		
-		/**********图像制式消息处理*********/
+		/**********图锟斤拷锟斤拷式锟斤拷息锟斤拷锟斤拷*********/
 		curMsg = POS_GetColorSysMsg(g_bGetColorSysFlg);
         if(curMsg != MSG_NULL)
 		{
@@ -83,7 +83,7 @@ void main(void)
 			curMsg = MSG_NULL;
 		}
 		
-		/**********时间消息处理*********/
+		/**********时锟斤拷锟斤拷息锟斤拷锟斤拷*********/
 		curMsg = POS_GetTimeMsg(g_bGetTimeFlg);
         if(curMsg != MSG_NULL)
 		{
@@ -91,7 +91,7 @@ void main(void)
 			curMsg = MSG_NULL;
 		}         
 		
-		/**********电池ADC消息处理*********/
+		/**********锟斤拷锟紸DC锟斤拷息锟斤拷锟斤拷*********/
         curMsg = POS_GetBatteryAdcMsg(g_bGetBatteryAdcFlg);
 		if(curMsg != MSG_NULL)
 		{
@@ -99,7 +99,7 @@ void main(void)
 			curMsg = MSG_NULL;
 		}
 		
-		/*********用户自定义消息处理********/
+		/*********锟矫伙拷锟皆讹拷锟斤拷锟斤拷息锟斤拷锟斤拷********/
 		curMsg = POS_GetUserDefinedMsg(g_bGetUserDefFlg); 
 		if(curMsg != MSG_NULL)
 		{
@@ -107,15 +107,17 @@ void main(void)
 			curMsg = MSG_NULL;
 		}
 
-		/**********BT消息处理*********/
+		/**********BT锟斤拷息锟斤拷锟斤拷*********/
+		#ifdef BTEn
         curMsg = POS_GetBTMsg(g_bGetBTFlg);
 		if(curMsg != MSG_NULL)
 		{
 			BTMsgHandle(curMsg);
 			curMsg = MSG_NULL;
 		}
+		#endif
 		
-	    /**********无法分类消息处理*********/
+	    /**********锟睫凤拷锟斤拷锟斤拷锟斤拷息锟斤拷锟斤拷*********/
 		curMsg = POS_GetMiscMsg(g_bGetMiscFlg); 
 		if(curMsg != MSG_NULL)
 		{
