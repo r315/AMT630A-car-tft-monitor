@@ -1,14 +1,14 @@
 /***********************************************************************
-*Copyright (C) 2005 ÉîÛÚ°¬¿Æ´´ÐÂÓÐÏÞ¹«Ë¾²úÆ·Ó¦ÓÃÒ»²¿
+*Copyright (C) 2005 ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½Æ·Ó¦ï¿½ï¿½Ò»ï¿½ï¿½
 * All rights reserved.
 
-*File name: ¡¡ GetSysMsg.c
-*Version:    ¡¡0.1
+*File name: ï¿½ï¿½ GetSysMsg.c
+*Version:    ï¿½ï¿½0.1
 *Author:       cjinzong
 *update:       2011-12-09
 
 *Description:
-             ´ËÎÄ¼þÊÇÏµÍ³²É¼¯ÐÅÏ¢£¬ÏµÍ³ËùÓÐµÄÐÅÏ¢·¢³ö¶¼ÓÉ´ËÎÄ¼þ·¢³ö¡£
+             ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ÏµÍ³ï¿½É¼ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É´ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *History:  
 
 ************************************************************************/
@@ -37,13 +37,13 @@
 
 /***********************************************************
 *name:       POS_GetUserInputMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-          »ñÈ¡ÓÃ»§ÊäÈëÐÅÏ¢£¬Ö÷ÒªÓÐ°´¼üºÍÒ£¿ØÁ½ÖÖÐÅÏ¢¡£
+          ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Òªï¿½Ð°ï¿½ï¿½ï¿½ï¿½ï¿½Ò£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
           
 *history:
 
@@ -79,13 +79,13 @@ MSG POS_GetUserInputMsg(FLAG timer)
 
 /***********************************************************
 *name:       POS_GetSignalMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-          »ñÈ¡ÐÅºÅ×´Ì¬ÏûÏ¢¡£Ö÷ÒªÊÇ¼ì²âÐÅºÅÓÐÎÞ£¬ÐÅºÅÇ¿ÈõµÈ×´Ì¬¡£
+          ï¿½ï¿½È¡ï¿½Åºï¿½×´Ì¬ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Òªï¿½Ç¼ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½ï¿½Þ£ï¿½ï¿½Åºï¿½Ç¿ï¿½ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½
           
 *history:
 
@@ -101,7 +101,7 @@ MSG POS_GetSignalMsg(FLAG timer)
 	{
 	    g_bGetSignalFlg = 0;
 		
-        //ÓÐÎÞÐÅºÅ¼ì²â
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ÅºÅ¼ï¿½ï¿½
 		if(bSignalFlg == ((COLOR_SYS_TV_ACTIVE&_BIT1)>>1))
 		{   
 			if(ucCont<DetecTimes)
@@ -111,11 +111,11 @@ MSG POS_GetSignalMsg(FLAG timer)
 				{
 				     if(bSignalFlg)
 				     {   
-				         return MSG_SIGNAL_OK; //¿É¿¿ÓÐÐÅºÅ
+				         return MSG_SIGNAL_OK; //ï¿½É¿ï¿½ï¿½ï¿½ï¿½Åºï¿½
 				     }
 					 else
 					 {   
-					     return MSG_NO_SIGNAL;//ÎÞÐÅºÅ
+					     return MSG_NO_SIGNAL;//ï¿½ï¿½ï¿½Åºï¿½
 					 }
 				}
 			}
@@ -132,13 +132,13 @@ MSG POS_GetSignalMsg(FLAG timer)
 
 /***********************************************************
 *name:       POS_GetColorSysMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-          »ñÈ¡Í¼ÏñÖÆÊ½ÐÅÏ¢£¬ÀýÈçPAL/NTSC/SECAMµÄÇÐ»»£¬ÅäÖÃÍ¼ÏñÐ§¹û¡£
+          ï¿½ï¿½È¡Í¼ï¿½ï¿½ï¿½ï¿½Ê½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PAL/NTSC/SECAMï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½
           
 *history:
 
@@ -174,13 +174,13 @@ MSG POS_GetColorSysMsg(FLAG timer)
 
 /***********************************************************
 *name:       POS_GetTimeMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-          »ñÈ¡ÏµÍ³Ê±¼äÏûÏ¢¡£ÀýÈç¶¨Ê±ÈÎÎñ¡£
+          ï¿½ï¿½È¡ÏµÍ³Ê±ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ç¶¨Ê±ï¿½ï¿½ï¿½ï¿½
           
 *history:
 
@@ -197,7 +197,7 @@ MSG POS_GetTimeMsg(FLAG timer)
 		{   
 		    if(--g_sysSetting.Osd.dispTime == 0)
 		    {    
-		         /*ÔÚ´ËÅÐ¶ÏÊÇ·ñÐèÒªÍË³öOSD »¹ÊÇÐèÒªÏÔÊ¾LOGO»òÆäËû²Ëµ¥*/
+		         /*ï¿½Ú´ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½Ë³ï¿½OSD ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¾LOGOï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½*/
                  return MSG_OSD_EXIT;
 		    }
 		}
@@ -207,7 +207,7 @@ MSG POS_GetTimeMsg(FLAG timer)
         {
 			if(++g_sysSetting.Osd.storageTime == OSD_STORAGE_TIME)
             {
-                /*ÔÚ´ËÅÐ¶ÏÊÇ·ñÐèÒª¼ÇÒäOSDÊý¾Ý*/
+                /*ï¿½Ú´ï¿½ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½OSDï¿½ï¿½ï¿½ï¿½*/
                 return(MSG_OSD_STORAGE);
             }
         }
@@ -243,13 +243,13 @@ MSG POS_GetTimeMsg(FLAG timer)
 
 /***********************************************************
 *name:       POS_GetBatteryAdcMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-          »ñÈ¡ÏµÍ³µç³ØµÄÊµÊ±µçÑ¹ÏûÏ¢¡£
+          ï¿½ï¿½È¡ÏµÍ³ï¿½ï¿½Øµï¿½ÊµÊ±ï¿½ï¿½Ñ¹ï¿½ï¿½Ï¢ï¿½ï¿½
           
 *history:
 
@@ -279,13 +279,13 @@ MSG POS_GetBatteryAdcMsg(FLAG timer)
 
 /***********************************************************
 *name:       POS_GetUserDefinedMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-         »ñÈ¡ÓÃ»§×Ô¶¨ÒåÏûÏ¢£¬ÀýÈçÒ»Ð©IOµÄ×´Ì¬ µÈµÈÊµÊ±²ÉÑùÏûÏ¢¡£
+         ï¿½ï¿½È¡ï¿½Ã»ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©IOï¿½ï¿½×´Ì¬ ï¿½Èµï¿½ÊµÊ±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
           
 *history:
 
@@ -294,7 +294,9 @@ MSG POS_GetUserDefinedMsg(FLAG timer)
 {
 #define IsCarReversing()      		((COMPHV_DETECT & _BIT6) == _BIT6)
 
+	#ifdef CarReversingSignalDetectEn
     static FLAG   s_bAvCarNoSignalFlg = TRUE;
+	#endif
 		
 	if((timer)&&(!IsFactoryEn()))
 	{
@@ -302,7 +304,7 @@ MSG POS_GetUserDefinedMsg(FLAG timer)
 		#ifdef CarReversingSignalDetectEn
 		g_bGetUserDefFlg = 0;
         
-		if(g_sysSetting.Car.RemberSource == INPUT_CAMERA_Car)  //µ¹³µÍ¨µÀ
+		if(g_sysSetting.Car.RemberSource == INPUT_CAMERA_Car)  //ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½
 		{
              if(IsCarReversing())
              {
@@ -364,7 +366,7 @@ MSG POS_GetUserDefinedMsg(FLAG timer)
 				 }
              }
 		}
-		else //·Çµ¹³µÍ¨µÀ
+		else //ï¿½Çµï¿½ï¿½ï¿½Í¨ï¿½ï¿½
 		{
 			switch(g_sysSetting.Car.DetecMode)
 			{
@@ -549,13 +551,13 @@ MSG POS_GetUserDefinedMsg(FLAG timer)
 
 /***********************************************************
 *name:       POS_GetBTMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-          »ñÈ¡BTÁ¬½Ó¡¢ÊÍ·Å£¬½ÓÌý¡¢¹Ò¶ÏµÄÏûÏ¢¡£
+          ï¿½ï¿½È¡BTï¿½ï¿½ï¿½Ó¡ï¿½ï¿½Í·Å£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò¶Ïµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
           
 *history:
 
@@ -595,13 +597,13 @@ MSG POS_GetBTMsg(FLAG timer)
 
 /***********************************************************
 *name:       POS_GetMiscMsg(timeflg)
-*input:      timeflg  //¶¨Ê±Ê±¼ä±êÖ¾
+*input:      timeflg  //ï¿½ï¿½Ê±Ê±ï¿½ï¿½ï¿½Ö¾
 *output:     void 
 *update:     2011-11-27 
 *state:      allright
 
 *description:   
-          »ñÈ¡ÔÓÀàÏûÏ¢£¬Ö÷ÒªÓÉÒ»Ð©²»ÄÜ·ÖÀàµÄÏûÏ¢¡£
+          ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½Ü·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½
           
 *history:
 
