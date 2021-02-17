@@ -379,5 +379,11 @@ void  MiscMsgHandle(MSG curMsg)
     {   
         printfStr("MSG_TURNOFF_BACKLIGHT");
         ExectComd(COMD_TurnOffBacklight);
-    }  
+    }
+
+	#ifdef UartTerminal
+	if(MSG_SERIAL == curMsg){
+		TERM_Handler();
+	}
+	#endif  
 }

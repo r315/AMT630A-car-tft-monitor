@@ -1,12 +1,12 @@
 /*
-ÏµÍ³ËùÓÐµÄÐÅÏ¢¶¨Òå¶¼ÔÚ´ËMAPÎÄ¼þ
+ÏµÍ³ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½å¶¼ï¿½Ú´ï¿½MAPï¿½Ä¼ï¿½
 */
 #ifndef MSG_MAP_H__
 #define MSG_MAP_H__
 
 typedef enum _sysMsg
 {
-  //ÓÃ»§°´¼üÏà¹ØMSG (°´¼ü°å°´¼ü£¬Ò£¿Ø°´¼ü)  UPK: user press key
+  //ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MSG (ï¿½ï¿½ï¿½ï¿½ï¿½å°´ï¿½ï¿½ï¿½ï¿½Ò£ï¿½Ø°ï¿½ï¿½ï¿½)  UPK: user press key
    MSG_UPK_UP,    
    MSG_UPK_DOWN,
    MSG_UPK_LEFT,
@@ -23,17 +23,17 @@ typedef enum _sysMsg
    MSG_UPK_CONTRAST,
    MSG_UPK_SATURATION,
 
-   //ÐÅºÅÏà¹ØMSG
+   //ï¿½Åºï¿½ï¿½ï¿½ï¿½MSG
    MSG_CONFIG_COLOR_SYS,
    MSG_SIGNAL_OK,
    MSG_NO_SIGNAL,
    MSG_NOSIGNALPOWEROFF,
    
-   //OSD Ïà¹ØMSG
+   //OSD ï¿½ï¿½ï¿½MSG
    MSG_OSD_EXIT,
    MSG_OSD_STORAGE,
 
-   //µ¹³µÏà¹ØMSG
+   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MSG
    MSG_CAR_PON_REVERSING,
    MSG_CAR_PON_GO_AHEAD,
    
@@ -42,18 +42,20 @@ typedef enum _sysMsg
 
    MSG_PON_REVERSING,
    
-   //À¶ÑÀÏà¹ØµÄMSG
+   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Øµï¿½MSG
    MSG_BT_CONN,
    MSG_BT_DISC,
    MSG_BT_CALLERID,
    MSG_BT_CALLERDROP,
    
-   //±³¹âÏà¹ØMSG
+   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MSG
    MSG_TURNOFF_BACKLIGHT,
    MSG_TURNON_BACKLIGHT,
    
-   //µç³ØÏà¹ØMSG
+   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MSG
    MSG_BATTERYADC,
+
+   MSG_SERIAL,
    
    MSG_NULL = -1,
 }MSG;

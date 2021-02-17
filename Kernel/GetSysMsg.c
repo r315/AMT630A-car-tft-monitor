@@ -645,6 +645,12 @@ MSG POS_GetMiscMsg(FLAG timer)
             }
 		}
 		#endif
+
+		#ifdef UartTerminal
+			if(TERM_HasData()){
+				return MSG_SERIAL;
+			}
+		#endif
 	}
 	return MSG_NULL;  
 }

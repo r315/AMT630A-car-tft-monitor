@@ -55,6 +55,9 @@ void POS_IrqServerRec(void) interrupt 4  //Uart Receive interrupt
    #endif
    #endif
 
+   #ifdef UartTerminal
+   POS_UartTerminal();
+   #endif
 }
 
 void POS_IrqServerExt2(void) interrupt 8//ext 2  ADC  interrupt
