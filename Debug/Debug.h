@@ -1,12 +1,12 @@
 /*******************************************************************************
-*Copyright (C) 2005 深圳艾科创新有限公司产品应用一部
+*Copyright (C) 2005 锟斤拷锟节帮拷锟狡达拷锟斤拷锟斤拷锟睫癸拷司锟斤拷品应锟斤拷一锟斤拷
 * All rights reserved.
 
-*File name: 　 Debug.h	  
+*File name: 锟斤拷 Debug.h	  
 *Version:      1.0
 *update:       2011-12-16
 *Description:
-  		    调试打印头文件。
+  		    锟斤拷锟皆达拷印头锟侥硷拷锟斤拷
   		  
 *History:  Jordan.chen   2011/12/16    1.0    build  this  moudle
 ******************************************************************************/
@@ -19,12 +19,17 @@
 #define _DEBUG_EXTERN_  extern
 #endif
 
-#ifdef UartPrintfEn	
-
+#if defined(UartPrintfEn) || defined(UartTerminal)
 _DEBUG_EXTERN_ void printf(char *str, WORD value);
 _DEBUG_EXTERN_ void printfStr(char *str);
 _DEBUG_EXTERN_ void IrqPrintf(char *str, WORD value);
 _DEBUG_EXTERN_ void IrqPutstr(UCHAR *pFmt);
+_DEBUG_EXTERN_ void POS_UartTerminal(void);
+_DEBUG_EXTERN_ void TERM_Init(void);
+_DEBUG_EXTERN_ void TERM_Handler(void);
+_DEBUG_EXTERN_ BOOL TERM_HasData(void);
+_DEBUG_EXTERN_ void xprintf(const char* fmt, ...);
+
 #else
 #define printf(x, y) 
 #define printfStr(x)
