@@ -182,13 +182,13 @@
 //[Key detect Ctrl]
 
 #ifdef KeyDetectEn 
-#define hw_upResistance      			12000     //��������ֵ  12k
+#define hw_upResistance      			2000     //��������ֵ  2k
 #define hw_downResistance    			0        // 0:��ʾ����������
 #define hw_keyVoltage        			3.3  
-#define ADC_CH_LIST         			{CH2} //{CH0,CH1,CH2} //ͨ���б�   
-#define hw_Key_getSDA_input()     	GetP1_0()      //SDA
-#define hw_Key_setSDA_output(x)   	SetP1_0(x)    //SDA
-#define hw_Key_setSCL_output(x)   	SetP1_1(x)  //SCL
+#define ADC_CH_LIST         			{CH0} //{CH0,CH1,CH2} //ͨ���б�   
+#define hw_Key_getSDA_input()     	    GetP1_0()   //SDA
+#define hw_Key_setSDA_output(x)   	    SetP1_0(x)  //SDA
+#define hw_Key_setSCL_output(x)   	    SetP1_1(x)  //SCL
 
 #define ADCKEY_PAD_ID        			KP_ARK_DEBUG_V01  //������
 #define I2CKEY_PAD_ID        			KP_ZYD_909K_V10  //I2C ������
@@ -265,7 +265,7 @@
 #define FACTORYMENU_START_Y_POS  			0X008A   //FACTORY MENU �˵���Y��ʼλ��
 
 //[OSD default language]
-#define DEFAULT_LANGUAGE        			JAPANESE//CHINESE//ENGLISH  //OSD Ĭ������
+#define DEFAULT_LANGUAGE        			ENGLISH//JAPANESE//CHINESE//ENGLISH  //OSD Ĭ������
 
 //[OSD display timeout]
 #define OSD_DISP_TIME           		200     //OSD ��ʾʱ��

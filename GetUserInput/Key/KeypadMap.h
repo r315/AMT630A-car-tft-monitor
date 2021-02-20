@@ -1,9 +1,9 @@
 /***********************************************************************
-*Copyright (C) 2005 ÉîÛÚ°¬¿Æ´´ÐÂÓÐÏÞ¹«Ë¾²úÆ·Ó¦ÓÃÒ»²¿
+*Copyright (C) 2005 ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½Æ·Ó¦ï¿½ï¿½Ò»ï¿½ï¿½
 * All rights reserved.
 
-*File name: ¡¡ KeypadMap.h
-*Version:    ¡¡0.2
+*File name: ï¿½ï¿½ KeypadMap.h
+*Version:    ï¿½ï¿½0.2
 *Author:       yshuizhou
 *update:      2011-12-30
 
@@ -27,15 +27,15 @@
 
 #if(ADCKEY_PAD_ID == KP_ARK_DEBUG_V01)
 //key val : adcCh + adcVal
-#define hw_KEY_POWER    	makeUint16 (CH2, hw_keyAdcVal(0))
-#define hw_KEY_SOURCE     	makeUint16 (CH2, hw_keyAdcVal(27000))
-#define hw_KEY_MENU   		makeUint16 (CH2, hw_keyAdcVal(56000))
-#define hw_KEY_LEFT     	makeUint16 (CH2, hw_keyAdcVal(8200))
-#define hw_KEY_RIGHT    	makeUint16 (CH2, hw_keyAdcVal(15000))
+#define hw_KEY_POWER    	makeUint16 (CH0, hw_keyAdcVal(0))
+#define hw_KEY_SOURCE     	makeUint16 (CH0, hw_keyAdcVal(27000))
+#define hw_KEY_MENU   		makeUint16 (CH0, hw_keyAdcVal(0xB0))
+#define hw_KEY_LEFT     	makeUint16 (CH0, hw_keyAdcVal(0x80)))
+#define hw_KEY_RIGHT    	makeUint16 (CH0, hw_keyAdcVal(0x50))
 
 
 //ADC Key Cmd Map
-#define AdcKeyCmdMap {hw_KEY_POWER,     KEY_POWER        },\
+#define AdcKeyCmdMap  {hw_KEY_POWER,     KEY_POWER        },\
 	                  {hw_KEY_SOURCE,    KEY_SOURCE_SWITCH},\
                       {hw_KEY_LEFT ,	   KEY_LEFT       },\
                       {hw_KEY_MENU,      KEY_MENU         },\
@@ -62,7 +62,7 @@
 	                  
 #endif //#if(I2CKEY_PAD_ID == KP_ZYD_909K_V10)
 
-/* °´¼ü¶ÔÓ¦µÄÏûÏ¢Ó³Éä±í*/
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ï¢Ó³ï¿½ï¿½ï¿½*/
 #define GeneralKeyMsgMap  {MSG_UPK_POWER, 		KEY_POWER 	       },\
 							{MSG_UPK_SOURCE_SWITCH, KEY_SOURCE_SWITCH  },\
 			                {MSG_UPK_LEFT,  		KEY_LEFT  	       },\
