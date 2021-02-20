@@ -84,29 +84,32 @@ UCHAR fifo_peek(fifo_t *fifo){
     return fifo->buf[fifo->tail];
 }
 */
-static UINT atoh(UCHAR *str){
+static UINT atoh(UCHAR **pstr){
     UINT val = 0;
+    char *str = *pstr;
     char c = *str;
     
     do {
-        val <<= 4;
-        if (c > '`' && c < 'g') {
+        if (c > '`' && c < 'g') {  // filter a,b,c,d,e,f
             c -= 'W';
         }
-        else if ((c > '@' && c < 'G')) {
+        else if ((c > '@' && c < 'G')) { // filter A,B,C,D,E,F
             c -= '7';
         }
-        else if (c > '/' && c < ':') {
+        else if (c > '/' && c < ':') { // filter 0-9
             c -= '0';
         }
         else {
-            return 0;
+            break;
         }
 
+        val <<= 4;
         val |= c;
         c = *(++str);
 
-    } while (c != '\0' && c != ' ' && c != '\n' && c != '\r');
+    } while (1); //(c != '\0' && c != ' ' && c != '\n' && c != '\r');
+
+    *pstr = str;
 
     return val;    
 }
@@ -118,7 +121,8 @@ static UINT atoh(UCHAR *str){
 void TERM_Handler(){
     
     UINT XDATA value1, value2;
-    UCHAR XDATA rcv;
+    UCHAR rcv;
+    char *pstr;
 
     if(fifo_get(&l_rx, &rcv) == FALSE){        
         return;
@@ -132,11 +136,46 @@ void TERM_Handler(){
             l_buf[l_idx] = '\0';    
             l_idx = 0;
 
-            switch(l_buf[0]){
-                case 'r':
-                    value1 = atoh(&l_buf[1]);
-                    value2 = CBYTE[value2];
-                    xprintf("\nADDR %04X = %02X\n", value1, value2);
+            value1 = (l_buf[0] << 8) | l_buf[1];
+
+            switch(value1){
+                case ('r' << 8) + 'c':
+                    pstr = &l_buf[2];
+                    value1 = atoh(&pstr);
+                    value2 = CBYTE[value1];
+                    xprintf("\nCODE %04X = %02X\n", value1, value2);
+                    break;                
+
+                case ('r' << 8) + 'i':
+                    pstr = &l_buf[2];
+                    value1 = atoh(&pstr);
+                    value2 = IBYTE[value1];
+                    xprintf("\nIDATA %04X = %02X\n", value1, value2);
+                    break;
+
+                case ('r' << 8) + 'x':
+                    pstr = &l_buf[2];
+                    value1 = atoh(&pstr);
+                    value2 = XBYTE[value1];
+                    xprintf("\nXDATA %04X = %02X\n", value1, value2);
+                    break;               
+
+                case ('w' << 8) + 'x':
+                    pstr = &l_buf[2];
+                    value1 = atoh(&pstr);
+                    pstr++;
+                    value2 = atoh(&pstr);
+                    XBYTE[value1] = (BYTE)value2;
+                    xprintf("\nWrite XDATA %04X = %02X\n", value1, value2);
+                    break;
+
+                case ('w' << 8) + 'i':
+                    pstr = &l_buf[2];
+                    value1 = atoh(&pstr);
+                    pstr++;
+                    value2 = atoh(&pstr);
+                    IBYTE[value1] = (BYTE)value2;
+                    xprintf("\nWrite IDATA %04X = %02X\n", value1, value2);
                     break;
 
                 default: 
@@ -155,35 +194,53 @@ void TERM_Handler(){
             break;
         }
 
-        case '4':
+        case 'Z':
         {
             l_msg = MSG_UPK_MENU;
             break;
         }
 
-        case '2':
+        case 'X':
+        {
+            l_msg = MSG_UPK_MODE;
+            break;
+        }
+
+        case 'C':
+        {
+            l_msg = MSG_UPK_SYS;
+            break;
+        }
+
+        case 'W':
+        {
+            l_msg = MSG_UPK_UP;
+            break;
+        }
+
+        case 'S':
+        {
+            l_msg = MSG_UPK_DOWN;
+            break;
+        }
+
+        case 'A':
         {
             l_msg = MSG_UPK_LEFT;
             break;
         }
 
-        case '3':
+        case 'D':
         {
             l_msg = MSG_UPK_RIGHT;
             break;
         }
 
-        case 's':
+        case 'v':
         {
             l_msg = MSG_UPK_SOURCE_SWITCH;
             break;
-        }
-
-        case 'c':
-        {
-            l_msg = MSG_UPK_BRIGHTNESS;
-            break;
-        }
+        }        
 
         default :
         {
@@ -214,6 +271,7 @@ MSG POS_GetTermMsg(){
     if(l_msg != MSG_NULL){
         tmp = l_msg;
         l_msg = MSG_NULL;
+        g_UserInputInfo.Status = inputPress;
         return tmp;
     }
 
@@ -250,15 +308,15 @@ void POS_UartTerminal(void){
 BOOL TERM_HasData(void){
     return fifo_avail(&l_rx) > 0;
 }
-
+/*
 void putchar(UCHAR ucVal)
 {	
     fifo_put(&l_tx, ucVal);
     TI = ON;
 }
-
+*/
 void printfStr(char *str){
- BYTE XDATA ucBff;
+    BYTE ucBff;
 
     while(1)
     {
@@ -276,60 +334,7 @@ void printfStr(char *str){
 }
 
 void printf(char *str, WORD value){
-#if 1
     xprintf(str,value);
-#else    
-char XDATA sendData;
-
-      fifo_put(&l_tx,(char)'\r');
-      fifo_put(&l_tx,(char)'\n');
-    
-      while(sendData=*(str++))
-    {
-        if (sendData==(char)'%') 
-        {
-            sendData=*(str++);
-              if (sendData==(char)'d' || sendData==(char)'x') 
-            {
-                if (value)
-                {
-                    BOOL noneZero=FALSE;
-                      WORD divider=10000;
-                      char dispValue;
-
-                      if (sendData==(char)'x')
-                        divider=0x1000;
-                      while (divider)
-                    {
-                        dispValue=value/divider;
-                          value-=dispValue*divider;
-                        if (dispValue)
-                              noneZero=TRUE;
-                        if (noneZero)
-                        {
-                            if (dispValue>9)
-                                 dispValue+=55;
-                               else
-                                dispValue+=0x30;
-                             fifo_put(&l_tx, dispValue);
-                          }
-                        if (sendData==(char)'d')
-                              divider/=10;
-                          else
-                             divider/=0x10;
-                    }
-                }
-                  else
-                  {
-                      fifo_put(&l_tx, '0');
-                  }	
-              }
-          }
-          else
-            fifo_put(&l_tx, sendData);
-    }
-    TI = ON;
-#endif
 }
 
 #define XPITOA_BUF_SIZE         8
@@ -390,10 +395,11 @@ void xpitoa(SINT val, SBYTE radix, SBYTE ndig)
 
 void xprintf(const char* fmt, ...)
 {	
-    SBYTE XDATA d, r, pad, lz;
-	CHAR XDATA *p;
     SINT value;
-	char XDATA *arp = (char*)&fmt + sizeof(fmt);
+    SBYTE d, r, pad;
+    BIT lz;
+	CHAR *p;
+	char *arp = (char*)&fmt + sizeof(fmt);
    
     while ((d = *fmt++) != '\0') {
 
