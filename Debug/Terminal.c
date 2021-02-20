@@ -2,6 +2,7 @@
 #include "DataType.h"
 #include "systemConfig.h"
 #include "global.h"
+#include "MsgMap.h"
 #include "AMT_Drv.h"
 #include "AMT_Mcu.h"
 #include "AMT_Reg.h"
@@ -117,53 +118,106 @@ static UINT atoh(UCHAR *str){
 void TERM_Handler(){
     
     UINT XDATA value1, value2;
-    UCHAR rcv;
+    UCHAR XDATA rcv;
 
-    fifo_get(&l_rx, &rcv);
-
-    if(rcv != '\n'){
-        fifo_put(&l_tx, rcv);
-
-        if (rcv == '\b') {
-            fifo_put(&l_tx, ' ');
-			fifo_put(&l_tx, rcv);
-			if(l_idx > 0){
-                l_idx--;
-            }
-		}else{
-            l_buf[l_idx] = rcv;
-
-            if(l_idx < sizeof(l_buf)){
-                l_idx++;
-            }
-        }
-
-        TI = ON;
+    if(fifo_get(&l_rx, &rcv) == FALSE){        
         return;
     }
 
-    l_buf[l_idx] = '\0';
-    
-    l_idx = 0;
+    fifo_put(&l_tx, rcv);
 
-    switch(l_buf[0]){
+    switch(rcv){
+        case '\n':
+        {
+            l_buf[l_idx] = '\0';    
+            l_idx = 0;
+
+            switch(l_buf[0]){
+                case 'r':
+                    value1 = atoh(&l_buf[1]);
+                    value2 = CBYTE[value2];
+                    xprintf("\nADDR %04X = %02X\n", value1, value2);
+                    break;
+
+                default: 
+                    break;
+            }
+            break;
+        }
+
         case 'b':
+        {
             if(g_bBackLightFlg){
                 TurnOffBackLight();
             }else{
                 TurnOnBackLight();
             }
             break;
+        }
 
-        case 'r':
-            value1 = atoh(&l_buf[1]);
-            value2 = CBYTE[value2];
-            xprintf("\nADDR %04X = %02X\n", value1, value2);
+        case '4':
+        {
+            l_msg = MSG_UPK_MENU;
             break;
+        }
 
-        default: 
+        case '2':
+        {
+            l_msg = MSG_UPK_LEFT;
             break;
+        }
+
+        case '3':
+        {
+            l_msg = MSG_UPK_RIGHT;
+            break;
+        }
+
+        case 's':
+        {
+            l_msg = MSG_UPK_SOURCE_SWITCH;
+            break;
+        }
+
+        case 'c':
+        {
+            l_msg = MSG_UPK_BRIGHTNESS;
+            break;
+        }
+
+        default :
+        {
+            if (rcv == '\b') {
+                fifo_put(&l_tx, ' ');
+                fifo_put(&l_tx, rcv);
+                if(l_idx > 0){
+                    l_idx--;
+                }
+            }else{
+                l_buf[l_idx] = rcv;
+
+                if(l_idx < sizeof(l_buf)){
+                    l_idx++;
+                }
+            }
+
+            break;
+        }
     }
+    
+    TI = ON;
+}
+
+MSG POS_GetTermMsg(){
+    MSG tmp;
+
+    if(l_msg != MSG_NULL){
+        tmp = l_msg;
+        l_msg = MSG_NULL;
+        return tmp;
+    }
+
+    return MSG_NULL;
 }
 
 void TERM_Init(void){    

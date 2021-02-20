@@ -19,7 +19,7 @@
 =========================================================*/
 //[Hardware function enable]
 #define BacklightEn          	//�������ʹ�ܿ���
-#define KeyDetectEn             //�������ʹ�ܿ���
+//#define KeyDetectEn             //�������ʹ�ܿ���
 //#define IrDetectEn           	//ң�ؼ��ʹ�ܿ���
 //#define LogoEn                //Logoģ�鿪��
 //#define CarBackEn            	//����ʹ�ܿ���

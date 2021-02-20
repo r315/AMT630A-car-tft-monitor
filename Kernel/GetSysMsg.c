@@ -34,6 +34,9 @@
 #include "BatteryAdc.h"
 #include "BT_UartRec.h"
 
+#ifdef UartTerminal
+MSG POS_GetTermMsg();
+#endif
 
 /***********************************************************
 *name:       POS_GetUserInputMsg(timeflg)
@@ -66,6 +69,14 @@ MSG POS_GetUserInputMsg(FLAG timer)
 		
 		#ifdef KeyDetectEn
 		curInputMsg = POS_GetKeyPadMsg();
+		if(curInputMsg != MSG_NULL)
+		{  			
+		    return curInputMsg;
+		}
+		#endif
+
+		#ifdef UartTerminal
+		curInputMsg = POS_GetTermMsg();
 		if(curInputMsg != MSG_NULL)
 		{  			
 		    return curInputMsg;
