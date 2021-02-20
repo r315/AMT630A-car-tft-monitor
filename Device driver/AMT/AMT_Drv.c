@@ -1,12 +1,12 @@
 /*******************************************************************************
-*Copyright (C) 2005 ÉîÛÚ°¬¿Æ´´ÐÂÓÐÏÞ¹«Ë¾²úÆ·Ó¦ÓÃÒ»²¿
+*Copyright (C) 2005 ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½Æ·Ó¦ï¿½ï¿½Ò»ï¿½ï¿½
 * All rights reserved.
 
-*File name: ¡¡ AMT_Drv.c	  
+*File name: ï¿½ï¿½ AMT_Drv.c	  
 *Version:      1.0
 *update:       2011-12-06
 *Description:
-  		   Õâ¸öÎÄ¼þÊÇ¶ÔAMTÓ¦ÓÃÇý¶¯µÄ¶¨Òå:
+  		   ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ç¶ï¿½AMTÓ¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½:
 
   		   
 *History:  yshuizhou   2011/12/06    1.0    build  this  moudle
@@ -27,7 +27,7 @@
 *input:  non              
 *output: non  
 
-*description: ÉèÖÃSPIÖÐSdaµÄ×´Ì¬
+*description: ï¿½ï¿½ï¿½ï¿½SPIï¿½ï¿½Sdaï¿½ï¿½×´Ì¬
 *history:   yshuizhou   2013/07/06    1.0    build   this  function
 *****************************************************************************/
 void SetSpDat(UCHAR Data)
@@ -48,7 +48,7 @@ void SetSpDat(UCHAR Data)
 *input:  non              
 *output: non  
 
-*description: ÉèÖÃSPIÖÐSclµÄ×´Ì¬
+*description: ï¿½ï¿½ï¿½ï¿½SPIï¿½ï¿½Sclï¿½ï¿½×´Ì¬
 *history:   yshuizhou   2013/07/06    1.0    build   this  function
 *****************************************************************************/
 void SetSpClk(UCHAR Data)
@@ -69,7 +69,7 @@ void SetSpClk(UCHAR Data)
 *input:  non              
 *output: non  
 
-*description: ÉèÖÃSPIÖÐCsµÄ×´Ì¬
+*description: ï¿½ï¿½ï¿½ï¿½SPIï¿½ï¿½Csï¿½ï¿½×´Ì¬
 *history:   yshuizhou   2013/07/06    1.0    build   this  function
 *****************************************************************************/
 void SetSpEna(UCHAR Data)
@@ -89,7 +89,7 @@ void SetSpEna(UCHAR Data)
 *input:  non              
 *output: non  
 
-*description: ÉèÖÃSPIÖÐResetµÄ×´Ì¬
+*description: ï¿½ï¿½ï¿½ï¿½SPIï¿½ï¿½Resetï¿½ï¿½×´Ì¬
 *history:   yshuizhou   2013/07/06    1.0    build   this  function
 *****************************************************************************/
 void SetReset(UCHAR Data)
@@ -113,7 +113,7 @@ void SetReset(UCHAR Data)
 *input:  Buzzertime              
 *output: non  
 
-*description: ÉèÖÃ·äÃùÆ÷¡£
+*description: ï¿½ï¿½ï¿½Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 *history:   yshuizhou   2014/02/13    1.0    build   this  function
 *****************************************************************************/
 void SetBuzzerOn(void)
@@ -141,7 +141,7 @@ void SetBuzzerOn(void)
 *input:  non              
 *output: non  
 
-*description: ´Ëº¯ÊýÉèÖÃSCL¡¢SDAÊ¹ÄÜ¡£
+*description: ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½SCLï¿½ï¿½SDAÊ¹ï¿½Ü¡ï¿½
 *history:   yshuizhou   2014/10/23    1.0    build   this  function
 *****************************************************************************/
 #ifdef UartPrintfEn  
@@ -158,7 +158,7 @@ void SetI2CDebug(void)
 *input:  non              
 *output: non  
 
-*description: ´Ëº¯ÊýÉèÖÃRxd¡¢TxdÊ¹ÄÜ
+*description: ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rxdï¿½ï¿½TxdÊ¹ï¿½ï¿½
 *history:   yshuizhou   2014/10/23    1.0    build   this  function
 *****************************************************************************/
 #ifdef UartPrintfEn  
@@ -172,11 +172,11 @@ void SetUartPrint(void)
 
 /*************************************************************************
 name:    Abs(UINT tmpVal1,UINT tmpVal2)
-input:   tmpVal1¡¢tmpVal2
-output:	 ·µ»Øµ±Ç°×î´óµÄÖµ¡£
-update£º 2011-12-07
-state£º  try out
-description: ·µ»Øµ±Ç°×î´óµÄÖµ¡£
+input:   tmpVal1ï¿½ï¿½tmpVal2
+output:	 ï¿½ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½
+updateï¿½ï¿½ 2011-12-07
+stateï¿½ï¿½  try out
+description: ï¿½ï¿½ï¿½Øµï¿½Ç°ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½
 
 history: yshuizhou   2011/12/20   0.2    build  this  function
 *************************************************************************/
@@ -198,7 +198,7 @@ UINT Abs(UINT tmpVal1,UINT tmpVal2)
 *input:  void              
 *output: void  
 
-*description: Ñ¡ÔñÊäÈë°´¼üÀàÐÍ(I2C KEY¡¢ADC KEY)¡£
+*description: Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ë°´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(I2C KEYï¿½ï¿½ADC KEY)ï¿½ï¿½
 
 *history: yshuizhou   2012/07/16    1.0    build   this  function
 *****************************************************************************/
@@ -238,7 +238,7 @@ void POS_SelectKeyDevice(void)
 	    g_ucSelKeyDevice =ADC_KEY;
 		
 		/*
-		»Ö¸´P1_0ÎªÊäÈë¿Ú
+		ï¿½Ö¸ï¿½P1_0Îªï¿½ï¿½ï¿½ï¿½ï¿½
 		*/
 		P1_IEN &= ~_BIT0;
 		P1_OEN |=  _BIT0;	
@@ -253,7 +253,7 @@ void POS_SelectKeyDevice(void)
 *output: void  
 
 *description:
-            ´Ëº¯Êý¿ØÖÆ¶ÔIRABµÄÑ¡Ôñ¡£
+            ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½IRABï¿½ï¿½Ñ¡ï¿½ï¿½
 *history:   yshuizhou   2013/03/07    1.0    build   this  function
 *****************************************************************************/
 #ifdef IrABCtrlEn
@@ -464,7 +464,7 @@ void  GetProCompielTime(void)
 *output: 
 
 *description:
-            Õâ¸öº¯ÊýÊÇÏµÍ³Ê±¼äÇý¶¯£¬¼ÆËãÏµÍ³Ê±¼ä¡£ 
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³Ê±ï¿½ä¡£ 
 *history:   yshuizhou   2012/07/16    1.0    build   this  function
 *****************************************************************************/
 BOOL POS_SysTimeDriver(void)
@@ -473,7 +473,7 @@ BOOL POS_SysTimeDriver(void)
    static UINT XDATA preTime3Cont = 0;
    UINT   XDATA tempValBuf;
    
-   /**********¶ÁT3µÄ¸ßµÍÎ»****************/
+   /**********ï¿½ï¿½T3ï¿½Ä¸ßµï¿½Î»****************/
    currenTime3Cont = T3_CNTH;
    currenTime3Cont <<= 8;
    currenTime3Cont |= T3_CNTL;
@@ -481,12 +481,12 @@ BOOL POS_SysTimeDriver(void)
    if(currenTime3Cont > preTime3Cont)
    {
         tempValBuf = currenTime3Cont - preTime3Cont;
-        if(tempValBuf >= 0x5b91)                   // 1s ->0x5b91 ÀíÂÛÖµ
+        if(tempValBuf >= 0x5b91)                   // 1s ->0x5b91 ï¿½ï¿½ï¿½ï¿½Öµ
         {
             tempValBuf =tempValBuf - 0x5b91;
             currenTime3Cont -= tempValBuf;
-            preTime3Cont =  currenTime3Cont;    //¸üÐÂ
-            //ÕâÀï¾ÍÒª¶ÔÊ±ÖÓ¼ÓÒ»Ãë
+            preTime3Cont =  currenTime3Cont;    //ï¿½ï¿½ï¿½ï¿½
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê±ï¿½Ó¼ï¿½Ò»ï¿½ï¿½
             if(++g_ucContBufSecond >=60)
             {
                return TRUE;
@@ -501,8 +501,8 @@ BOOL POS_SysTimeDriver(void)
         {
             tempValBuf = tempValBuf - 0x5b91;
             currenTime3Cont -= tempValBuf;
-            preTime3Cont =  currenTime3Cont;       //¸üÐÂ
-            //ÕâÀï¾ÍÒª¶ÔÊ±ÖÓ¼ÓÒ»Ãë
+            preTime3Cont =  currenTime3Cont;       //ï¿½ï¿½ï¿½ï¿½
+            //ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê±ï¿½Ó¼ï¿½Ò»ï¿½ï¿½
             if(++g_ucContBufSecond >=60)
             {
                return TRUE;
@@ -517,11 +517,11 @@ BOOL POS_SysTimeDriver(void)
 
 /****************************************************************************
 *name:   SendNecIrData(ULONG SendData)   
-*input:  CustomCode¡¢DataCode             
+*input:  CustomCodeï¿½ï¿½DataCode             
 *output: void  
 
 *description:
-            ´Ëº¯Êý×¨ÃÅÓÃÓÚ·¢ËÍNEC IR¡£
+            ï¿½Ëºï¿½ï¿½ï¿½×¨ï¿½ï¿½ï¿½ï¿½ï¿½Ú·ï¿½ï¿½ï¿½NEC IRï¿½ï¿½
 *history:   yshuizhou   2012/06/26    1.0    build   this  function
 *****************************************************************************/
 #ifdef IrSendEn
@@ -607,12 +607,12 @@ void POS_SendNecIrData(UCHAR DataWith,ULONG SendData)
 
 /*************************************************************************
 *name:    EnableChipAdc(AdcChannelType ADchanel)
-*input:   ADchanel    ADC Í¨µÀÑ¡Ôñ  
-*output:  ·µ»Øµ±Ç°Ñ¡ÖÐÍ¨µÀµÄADCÖµ   
+*input:   ADchanel    ADC Í¨ï¿½ï¿½Ñ¡ï¿½ï¿½  
+*output:  ï¿½ï¿½ï¿½Øµï¿½Ç°Ñ¡ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ADCÖµ   
 *update:  2011-12-07
 *state:   try out
 
-*description:  ·µ»Øµ±Ç°Ñ¡ÖÐÍ¨µÀµÄADCÖµ   
+*description:  ï¿½ï¿½ï¿½Øµï¿½Ç°Ñ¡ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ADCÖµ   
             
 *history:  yshuizhou   2011/12/20    0.2    build  this  function	
 **************************************************************************/
@@ -694,8 +694,8 @@ UINT POS_EnableChipAdc(AdcChannelType Channel)
 *output: void  
 
 *description:
-      MCU: ±íÊ¾MCU¿ØÖÆÊÓÆµÄ£¿é,ARKchip ÎªMaterÄ£Ê½.
-      IIC: ±íÊ¾IIC¿ØÖÆ£¬ARKchipÎªSlaveÄ£Ê½¡£
+      MCU: ï¿½ï¿½Ê¾MCUï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÆµÄ£ï¿½ï¿½,ARKchip ÎªMaterÄ£Ê½.
+      IIC: ï¿½ï¿½Ê¾IICï¿½ï¿½ï¿½Æ£ï¿½ARKchipÎªSlaveÄ£Ê½ï¿½ï¿½
 
 *history: Jordan.chen   2012/01/03    1.0    transplant   this  function
 *****************************************************************************/
@@ -718,7 +718,7 @@ void ConfigCrtlMode(UCHAR CtrlMode)
 *output: void  
 
 *description:
-      ¹Ø±Õ±³¹âº¯Êý¡£
+      ï¿½Ø±Õ±ï¿½ï¿½âº¯ï¿½ï¿½ï¿½ï¿½
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -751,7 +751,7 @@ void TurnOffBackLight(void)
 *output: void  
 
 *description:
-	  ´ò¿ª±³¹âº¯Êý¡£
+	  ï¿½ò¿ª±ï¿½ï¿½âº¯ï¿½ï¿½ï¿½ï¿½
 
 *history: Jordan.chen	2011/12/16	  1.0	 transplant   this	function
 *****************************************************************************/
@@ -783,7 +783,7 @@ void TurnOnBackLight(void)
 *output: void  
 
 *description:
-      ´ý»úµÍ¹¦ºÄº¯Êý
+      ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ï¿½ï¿½Äºï¿½ï¿½ï¿½
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -805,7 +805,7 @@ void EnterLowPowerMode(void)
 *output: void  
 
 *description:
-      ÍË³ö´ý»úµÍ¹¦ºÄº¯Êý
+      ï¿½Ë³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ï¿½ï¿½Äºï¿½ï¿½ï¿½
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -829,7 +829,7 @@ void ExitLowPowerMode(void)
 *output: void  
 
 *description:
-      ¾²Òôº¯Êý
+      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -855,7 +855,7 @@ void SetAudioMute(void)
 *output: void  
 
 *description:
-      ´ò¿ªÉùÒô
+      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -883,7 +883,7 @@ void OpenAudio(void)
 *input:   tmpVolume
 *output:  void
 
-*description: ÒôÁ¿µ÷Õû
+*description: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             
 *history:     yshuizhou   2012/06/26    1.0    build   this  function
 **************************************************************************/
@@ -926,7 +926,7 @@ void CtrlVolumeByPWM(UCHAR tmpVolume)
 
 /****************************************************************************
 *name:   SelAudioInputSource(InputSourceType curSource)
-*input:  curSource  µ±Ç°ÐÅºÅÔ´              
+*input:  curSource  ï¿½ï¿½Ç°ï¿½Åºï¿½Ô´              
 *output: void  
 
 *description:
@@ -966,7 +966,7 @@ void SelAudioInputSource(InputSourceType curSource)
 *output: void  
 
 *description:
-      ²âÊÔÍ¼Ñ¡Ôñ¡£
+      ï¿½ï¿½ï¿½ï¿½Í¼Ñ¡ï¿½ï¿½
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/	
@@ -1015,7 +1015,7 @@ void SetVDETestSwitch(UCHAR ScreeSw)
 *output: void  
 
 *description:
-      ÎÞÐÅºÅÑ©»¨¡£
+      ï¿½ï¿½ï¿½Åºï¿½Ñ©ï¿½ï¿½ï¿½ï¿½
 
 *history: yshuizhou   2014/11/03    1.0    transplant   this  function
 *****************************************************************************/	
@@ -1030,11 +1030,11 @@ void SetNoSignalSnow(void)
 
 /****************************************************************************
 *name:   TurnOnDevicePower(InputSourceType curSource)
-*input:  curSource  µ±Ç°ÐÅºÅÔ´              
+*input:  curSource  ï¿½ï¿½Ç°ï¿½Åºï¿½Ô´              
 *output: void  
 
 *description:
-       ´ò¿ªÍâÎ§Éè±¸µçÔ´
+       ï¿½ï¿½ï¿½ï¿½Î§ï¿½è±¸ï¿½ï¿½Ô´
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -1059,11 +1059,11 @@ void TurnOnDevicePower(InputSourceType curSource)
 
 /****************************************************************************
 *name:   SelVideoDevice(InputSourceType curSource)
-*input:  curSource  µ±Ç°ÐÅºÅÔ´              
+*input:  curSource  ï¿½ï¿½Ç°ï¿½Åºï¿½Ô´              
 *output: void  
 
 *description:
-      ¾²Òôº¯Êý
+      ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -1109,11 +1109,11 @@ void SelVideoDevice(InputSourceType curSource)
 }
 /****************************************************************************
 *name:   TurnOffDevicePower(InputSourceType curSource)
-*input:  curSource  µ±Ç°ÐÅºÅÔ´              
+*input:  curSource  ï¿½ï¿½Ç°ï¿½Åºï¿½Ô´              
 *output: void  
 
 *description:
-       ¹Ø±ÕÍâÎ§Éè±¸µçÔ´
+       ï¿½Ø±ï¿½ï¿½ï¿½Î§ï¿½è±¸ï¿½ï¿½Ô´
 
 *history: Jordan.chen   2011/12/16    1.0    transplant   this  function
 *****************************************************************************/
@@ -1142,7 +1142,7 @@ void TurnOffDevicePower(InputSourceType curSource)
 *output: void  
 
 *description:
-      ARKºìÍâ³õÊ¼»¯º¯Êý
+      ARKï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 *history: 
    1.Jordan.chen   2011/12/10    1.0    buil   this  function
@@ -1167,23 +1167,23 @@ void InitRemote(void)
 	
 	#if IR_DECODE_MODE == IR_HARDWARE
     #if IR_TYPE == NEC
-	//ÏµÍ³ÉèÖÃ£¬ÓÃ»§Ò»°ã²»ÐèÒªÐÞ¸ÄÒ»ÏÂ¼Ä´æÆ÷Öµ¡£
-	XBYTE[0XFF82] = 0X01;//ÉèÖÃÐ­ÒéÀàÐÍ£¬Êý¾Ý¼«ÐÔ£¬Âö³å¼«ÐÔ¡£
-    XBYTE[0XFF62] = 0x3f;//Ê±ÖÓ·ÖÆµ ´Ó27M·ÖÆµ¡£
-	XBYTE[0XFF63] = 0x10;//Ã«ÆðÂË²¨
-	XBYTE[0XFF64] = 0x04;//Ñ¡ÔñÊ±ÖÓÓÐÐ§Î»Êý¡£
+	//ÏµÍ³ï¿½ï¿½ï¿½Ã£ï¿½ï¿½Ã»ï¿½Ò»ï¿½ã²»ï¿½ï¿½Òªï¿½Þ¸ï¿½Ò»ï¿½Â¼Ä´ï¿½ï¿½ï¿½Öµï¿½ï¿½
+	XBYTE[0XFF82] = 0X01;//ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½å¼«ï¿½Ô¡ï¿½
+    XBYTE[0XFF62] = 0x3f;//Ê±ï¿½Ó·ï¿½Æµ ï¿½ï¿½27Mï¿½ï¿½Æµï¿½ï¿½
+	XBYTE[0XFF63] = 0x10;//Ã«ï¿½ï¿½ï¿½Ë²ï¿½
+	XBYTE[0XFF64] = 0x04;//Ñ¡ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½ï¿½ï¿½
     XBYTE[0XFF6B] = 0x00;//
     XBYTE[0XFF6C] = 0x00;//
     XBYTE[0XFF6D] = 0x00;//
     XBYTE[0XFF6E] = 0x00;//
-	XBYTE[0XFF79] = 0x01;//ÉèÖÃÖÐ¶ÏºÅÏòÁ¿
-    XBYTE[0XFF7A] = 0x73;//ÉèÖÃºìÍâ½âÂëÄ£Ê½ £¬°üÀ¨ÊÇ·ñÅÐ¶Ï¿Í»§Âë
+	XBYTE[0XFF79] = 0x01;//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ïºï¿½ï¿½ï¿½ï¿½ï¿½
+    XBYTE[0XFF7A] = 0x73;//ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Ð¶Ï¿Í»ï¿½ï¿½ï¿½
     XBYTE[0XFF7B] = 0xff;//
     XBYTE[0XFF7C] = 0x02;// 
-    XBYTE[0XFF77] = 0x59;//ÊÍ·ÅÊ±¼ä¼ÆÊýÆ÷
+    XBYTE[0XFF77] = 0x59;//ï¿½Í·ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	XBYTE[0XFF78] = 0x00;
     
-    //ÓÃ»§ÐèÒª¶¨ÖÆÐÞ¸ÄµÄ¼Ä´æÆ÷
+    //ï¿½Ã»ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ÄµÄ¼Ä´ï¿½ï¿½ï¿½
     XBYTE[0XFF65] = _9MS_L_WITH;//start 9ms  
     XBYTE[0XFF66] = _4_5MS_H_WITH;//start 4.5ms
     XBYTE[0XFF67] = ONE_L_WITH;//"1" 560us  
@@ -1196,18 +1196,18 @@ void InitRemote(void)
     XBYTE[0XFF71] = REPEAT_CODE2_L; 
     XBYTE[0XFF72] = REPEAT_CODE2_H;
     
-    XBYTE[0XFF61] = IR_Delta_DATA;//delta :´ËÊýÖµÎª³ý repeat ºÜ³¤µÄÊý¾ÝµÄdelta.	
-    XBYTE[0XFF7D] = IR_Delta_96ms;//delta :×¨ÃÅÌá¹©¸ørepeat×îºóµÄÒ»¸ö³¤Âö¿íÓÃµÄ¡£
+    XBYTE[0XFF61] = IR_Delta_DATA;//delta :ï¿½ï¿½ï¿½ï¿½ÖµÎªï¿½ï¿½ repeat ï¿½Ü³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ýµï¿½delta.	
+    XBYTE[0XFF7D] = IR_Delta_96ms;//delta :×¨ï¿½ï¿½ï¿½á¹©ï¿½ï¿½repeatï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÃµÄ¡ï¿½
 	#endif
 	#endif
 
 	#if IR_DECODE_MODE == IR_SOFTWARE
-	XBYTE[0XFF82] = 0X01;//ÉèÖÃÐ­ÒéÀàÐÍ£¬Êý¾Ý¼«ÐÔ£¬Âö³å¼«ÐÔ¡£
-    XBYTE[0XFF62] = 0x3f;//Ê±ÖÓ·ÖÆµ ´Ó24M·ÖÆµ¡£
-	XBYTE[0XFF63] = 0x10;//Ã«ÆðÂË²¨
-	XBYTE[0XFF64] = 0x04;//Ñ¡ÔñÊ±ÖÓÓÐÐ§Î»Êý¡£
-	XBYTE[0XFF79] = 0x01;//ÉèÖÃÖÐ¶ÏºÅÏòÁ¿
-    XBYTE[0XFF7A] = 0x01;//ÉèÖÃÎªÈí¼þ½âÂëÄ£Ê½¡£   
+	XBYTE[0XFF82] = 0X01;//ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½Ý¼ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½å¼«ï¿½Ô¡ï¿½
+    XBYTE[0XFF62] = 0x3f;//Ê±ï¿½Ó·ï¿½Æµ ï¿½ï¿½24Mï¿½ï¿½Æµï¿½ï¿½
+	XBYTE[0XFF63] = 0x10;//Ã«ï¿½ï¿½ï¿½Ë²ï¿½
+	XBYTE[0XFF64] = 0x04;//Ñ¡ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ð§Î»ï¿½ï¿½ï¿½ï¿½
+	XBYTE[0XFF79] = 0x01;//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ïºï¿½ï¿½ï¿½ï¿½ï¿½
+    XBYTE[0XFF7A] = 0x01;//ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½ï¿½ï¿½   
 	#endif
 
 	printfStr("InitRemote\n");
@@ -1221,7 +1221,7 @@ void InitRemote(void)
 *output: curIrKey  
 
 *description:
-      »ñÈ¡Ir°´¼üÖµ
+      ï¿½ï¿½È¡Irï¿½ï¿½ï¿½ï¿½Öµ
 
 *history: 
    1.Jordan.chen   2011/12/19    1.0    buil   this  function
@@ -1259,7 +1259,7 @@ UINT POS_GetIrKeyVal(void)
 *output: void  
 
 *description:
-      ³õÊ¼»¯ADC 
+      ï¿½ï¿½Ê¼ï¿½ï¿½ADC 
 
 *history: 
    1.Jordan.chen   2012/01/06    1.0    buil   this  function
@@ -1293,7 +1293,9 @@ void InitAdc(void)
 	
    	//adc interupt mask
 	ADC_INT_M_L = 0XFF; 
-	ADC_INT_M_H = 0XFF; 
+	ADC_INT_M_H = 0XFF;
+	
+	printfStr("InitAdc");
 }
 
 
@@ -1303,7 +1305,7 @@ void InitAdc(void)
 *output:  void  
 
 *description:
-        ³õÊ¼»¯µ¹³µ¼ì²âÄ£¿é
+        ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½
 
 *history: 
    1.Jordan.chen   2011/12/19    1.0    buil   this  function
@@ -1331,14 +1333,14 @@ void InitCarReversing(void)
 *output: void  
 
 *description:
-      ARK ³õÊ¼»¯Ä£¿éÊ±ÖÓ¡£
+      ARK ï¿½ï¿½Ê¼ï¿½ï¿½Ä£ï¿½ï¿½Ê±ï¿½Ó¡ï¿½
 
 *history: 
    1.Jordan.chen   2011/12/19    1.0    buil   this  function
 *****************************************************************************/
 void InitGlobalPara()
 {
-    printfStr("InitGlobalPara\n");
+    printfStr("InitGlobalPara");
 	
 	InitAMT();  
 	ConfigPadMuxPara();

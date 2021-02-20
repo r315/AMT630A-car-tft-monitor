@@ -1,14 +1,14 @@
 /***********************************************************************
-*Copyright (C) 2005 ÉîÛÚ°¬¿Æ´´ÐÂÓÐÏÞ¹«Ë¾²úÆ·Ó¦ÓÃÒ»²¿
+*Copyright (C) 2005 ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½Æ·Ó¦ï¿½ï¿½Ò»ï¿½ï¿½
 * All rights reserved.
 
-*File name: ¡¡ SysWorkPara.c
-*Version:    ¡¡0.1
+*File name: ï¿½ï¿½ SysWorkPara.c
+*Version:    ï¿½ï¿½0.1
 *Author:       Jordan.chen
 *update:       2011-12-19
 
 *Description:
-            Ö÷ÒªÊÇÏµÍ³ÅäÖÃ²ÎÊýµÄ¹ÜÀí¡£
+            ï¿½ï¿½Òªï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½ï¿½ï¿½
 *History:  
 
 ************************************************************************/
@@ -46,13 +46,13 @@ UCHAR ContSysCheckSum(UCHAR *pSysPara, UINT numOper)
 *output:  non  
 
 *description:   
-     	 Õâ¸öº¯ÊýÓÃÀ´¼ì²âÏµÍ³²ÎÊýµÄÁÙ½çÖµ,Èç¹ûÒ»µ©·¢ÏÖÓÐ³ö´íµÄÊý¾Ý£¬¾Í»á
-		 °ÑÕâ¸ö´íÎóµÄÊý¾Ý»Ö¸´ÎªÄ¬ÈÏÖµ¡£ 
+     	 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ù½ï¿½Öµ,ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý£ï¿½ï¿½Í»ï¿½
+		 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý»Ö¸ï¿½ÎªÄ¬ï¿½ï¿½Öµï¿½ï¿½ 
 *history:  
 *************************************************************************/
 void CheckSetting(void)
 {
-	//printfStr("CheckSetting");
+	printfStr("CheckSetting");
 	if(g_sysSetting.Video.curSource >= MAX_VIDEO_CHANNEL)
 	{
 	     g_sysSetting.Video.curSource  = DefaultSource; 
@@ -166,7 +166,7 @@ void CheckSetting(void)
 *state:      allright
 
 *description:   
-           Ð£ÑéÏµÍ³ÅäÖÃ¡£
+           Ð£ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ã¡ï¿½
 *history:
                                 
 ************************************************************/
@@ -175,8 +175,9 @@ BOOL VerifySetting(UCHAR *pSysPara, UINT numOper, UCHAR sysCheckSum)
     
     UINT XDATA i;
 	UCHAR XDATA tmpCheckSum = 0x00;
+	BIT res = 0;
 	
-     //printfStr("VerifySetting");
+    printfStr("Verify Settings: ");
 	 
     if((g_sysSetting.OX55 == 0x55) && (g_sysSetting.OXAA == 0xaa))
     {
@@ -187,19 +188,17 @@ BOOL VerifySetting(UCHAR *pSysPara, UINT numOper, UCHAR sysCheckSum)
 
 		if(sysCheckSum == tmpCheckSum)
 		{
-			return(1);
-		}
-		else
-		{
-			return(0);
-		}
-    }
-	else
-	{
-	    return(0);
+			res = 1;
+		}		
+    }	
+	
+	if(res){
+		printfStr("  Valid");
+	}else{
+		printfStr("  Invalid");
 	}
-	
-	
+
+	return res;
 }
 
 
@@ -211,7 +210,7 @@ BOOL VerifySetting(UCHAR *pSysPara, UINT numOper, UCHAR sysCheckSum)
 *state:      allright
 
 *description:   
-           ±£´çÏµÍ³ÉèÖÃ²ÎÊý
+           ï¿½ï¿½ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½
 *history:
                                 
 ************************************************************/
@@ -220,10 +219,10 @@ void SaveSetting(void)
 
     printfStr("SaveSetting");
 	
-	/*×¢Òâ£ºÖ»ÊÇÐèÒª¶ÔÏµÍ³¹¤×÷²ÎÊý½øÐÐÐ£Ñé*/
+	/*×¢ï¿½â£ºÖ»ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½*/
 	CheckSetting();
 
-	/*Êý¾Ý±êÖ¾*/
+	/*ï¿½ï¿½ï¿½Ý±ï¿½Ö¾*/
 	g_sysSetting.OX55 = 0x55;
 	g_sysSetting.OXAA = 0xaa;
 	g_sysSetting.xorSum = ContSysCheckSum((UCHAR *)&g_sysSetting, (sizeof(SysWorkParaType) - sizeof(UCHAR))); 
@@ -250,13 +249,13 @@ void SaveSetting(void)
 *state:      allright
 
 *description:   
-           ÉèÖÃÄ¬ÈÏÉèÖÃ²ÎÊý¡£
+           ï¿½ï¿½ï¿½ï¿½Ä¬ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½
 *history:
                                 
 ************************************************************/
 void ResetSetting(void)
 {   
-    printfStr("ResetSetting\n");
+    printfStr("ResetSetting");
     g_sysSetting.Video.curSource = DefaultSource;
 	g_sysSetting.Car.RemberSource = DefaultSource;
 	g_sysSetting.Video.brigthness = MAX_VALUE/2;
@@ -265,7 +264,7 @@ void ResetSetting(void)
 	g_sysSetting.Video.tint= MAX_VALUE/2;
 	g_sysSetting.Video.ScreeSw = VDE_CLOSE;
 	g_sysSetting.Video.colorSys= PAL;
-	g_sysSetting.Video.vcomDC=DEFAULT_VCOMDCVAL;
+	g_sysSetting.Video.vcomDC= DEFAULT_VCOMDCVAL;
 	g_sysSetting.Audio.volVal = MAX_VALUE/2;
 	g_sysSetting.Audio.status = MUTE_OFF;
 	g_sysSetting.Disp.zoomMode = DISP_16_9;
@@ -299,7 +298,7 @@ void ResetSetting(void)
 *state:      allright
 
 *description:   
-           ¶ÁÈ¡ÏµÍ³ÉèÖÃ²ÎÊý
+           ï¿½ï¿½È¡ÏµÍ³ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½
 *history:
                                 
 ************************************************************/
@@ -316,7 +315,7 @@ BOOL ReadSetting(void)
 		return 1;
     }
 	else
-	{
+	{		
 		#ifdef FlashEn
 		VerifyFlashDate(FLASH_COPY_ADDR);
 	    #endif

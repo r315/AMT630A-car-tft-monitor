@@ -343,12 +343,20 @@ void InitialExtInterrupt(void)
 ************************************************************/
 void InitMcu(void)
 {
+	UINT XDATA i;
+
 	InitialPPort();
 	InitialTimer();
 	InitialSerialPort();
 	InitialWatchDog();
 	InitialExtInterrupt();
 	TERM_Init();
-	printfStr("-----------------------------------------------------------\n");
+
+	for(i = 0; i < 0x800; i++)
+    {
+       XBYTE[i] = 0xff;
+    }
+	
+	printfStr("************ RESET ***********");
 	printfStr("Mcu init ok!\n");
 }
