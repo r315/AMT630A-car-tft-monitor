@@ -19,8 +19,9 @@ typedef struct {
     UCHAR buf[FIFO_SIZE];
 } fifo_t;
 
-static XDATA fifo_t l_rx, l_tx;
+static fifo_t XDATA l_rx, l_tx;
 static UCHAR XDATA l_buf[10], l_idx;
+static MSG XDATA l_msg;
 
 void fifo_init(fifo_t *fifo)
 {
@@ -28,12 +29,12 @@ void fifo_init(fifo_t *fifo)
     fifo->tail = 0;
 }
 
-BOOL fifo_put(fifo_t *fifo, UCHAR c)
+BOOL fifo_put(fifo_t *fifo, UCHAR c) reentrant 
 {
     BYTE next;
 
     // check if FIFO has room
-    next = (fifo->head + 1) % FIFO_SIZE;
+    next = (fifo->head + 1) & (FIFO_SIZE - 1); //% FIFO_SIZE;
     if (next == fifo->tail) {
         // full
         return FALSE;
@@ -45,7 +46,7 @@ BOOL fifo_put(fifo_t *fifo, UCHAR c)
     return TRUE;
 }
 
-BOOL fifo_get(fifo_t *fifo, UCHAR *pc)
+BOOL fifo_get(fifo_t *fifo, UCHAR *pc) reentrant 
 {
     BYTE next;
 
@@ -54,7 +55,7 @@ BOOL fifo_get(fifo_t *fifo, UCHAR *pc)
         return FALSE;
     }
 
-    next = (fifo->tail + 1) % FIFO_SIZE;
+    next = (fifo->tail + 1) & (FIFO_SIZE - 1); //% FIFO_SIZE;
 
     *pc = fifo->buf[fifo->tail];
     fifo->tail = next;
@@ -62,11 +63,12 @@ BOOL fifo_get(fifo_t *fifo, UCHAR *pc)
     return TRUE;
 }
 
-BYTE fifo_avail(fifo_t *fifo)
+BYTE fifo_avail(fifo_t *fifo) reentrant 
 {
-    return (FIFO_SIZE + fifo->head - fifo->tail) % FIFO_SIZE;
+    return (FIFO_SIZE + fifo->head - fifo->tail) & (FIFO_SIZE - 1); //% FIFO_SIZE;
 }
 
+/*
 BYTE fifo_free(fifo_t *fifo)
 {
     return (FIFO_SIZE - 1 - fifo_avail(fifo));
@@ -77,11 +79,10 @@ void fifo_flush(fifo_t *fifo)
     fifo->head = 0;
     fifo->tail = 0;
 }
-
 UCHAR fifo_peek(fifo_t *fifo){
     return fifo->buf[fifo->tail];
 }
-
+*/
 static UINT atoh(UCHAR *str){
     UINT val = 0;
     char c = *str;
@@ -176,7 +177,7 @@ void TERM_Init(void){
 }
 
 void POS_UartTerminal(void){
-UCHAR d;
+    UCHAR d;
 
     if(RI){
         RI = 0;
@@ -277,22 +278,18 @@ char XDATA sendData;
 #endif
 }
 
-
-typedef unsigned char *va_list;
-#define va_start(list, param)   (list = (((va_list)&param) + sizeof(param)))
-#define va_arg(list, type)      (*(type *)((list += sizeof(type)) - sizeof(type)))
-#define va_end(list)            ((void)(list = (va_list)0))
 #define XPITOA_BUF_SIZE         8
-
+/**
+ * \param ndig: 0 = no padding, > 0 = leading spaces, < 0 = leading zeros
+ * */
 void xpitoa(SINT val, SBYTE radix, SBYTE ndig)
 {
-#if 1
-    CHAR XDATA buf[XPITOA_BUF_SIZE];
-    UCHAR i, c, r, sgn, pad;
+    BYTE XDATA buf[XPITOA_BUF_SIZE];
+    BYTE i, c, r, sgn, pad;
     UINT v;
 	
-		sgn = 0;
-		pad = ' ';
+    sgn = 0;
+    pad = ' ';
 
     if (radix < 0) {
         radix = -radix;
@@ -319,7 +316,7 @@ void xpitoa(SINT val, SBYTE radix, SBYTE ndig)
     buf[--i] = '\0';
 
     do {
-        c = (UCHAR)(v % r);
+        c = (BYTE)(v % r);
         if (c >= 10) c += 7;
         c += '0';
         buf[--i] = c;
@@ -335,54 +332,54 @@ void xpitoa(SINT val, SBYTE radix, SBYTE ndig)
     while(buf[i]){
         fifo_put(&l_tx, buf[i++]);
     }
-#endif
 }
 
 void xprintf(const char* fmt, ...)
 {	
-#if 1
-    SBYTE d, r, w, s;
-	CHAR *p;
-
-    va_list arp;
-    va_start(arp, fmt);	
-
+    SBYTE XDATA d, r, pad, lz;
+	CHAR XDATA *p;
+    SINT value;
+	char XDATA *arp = (char*)&fmt + sizeof(fmt);
+   
     while ((d = *fmt++) != '\0') {
+
+        if (d == '\0'){
+            break;
+        }
+
+        r = pad = lz = 0;
 
         if (d != '%') {			
             fifo_put(&l_tx, d);
             continue;
         }
 
-        d = *fmt++;		
-            
-        w = r = s = 0;        
+        d = *fmt++;
 
-        if (d == '0') {
-            d = *fmt++; 
-            s = 1;
-        }
-
-        while ((d >= '0') && (d <= '9')) {
-            w += w * 10 + (d - '0');
-            d = *fmt++;
-        }        
-
-        if (d == '\0'){
-            break;
-        }
-        
-        if (d == 's') {
-            p = va_arg(arp, CHAR*);
+        if (d == 's') {     // Print string?            
+            p = (char *)((arp += sizeof(char)) - sizeof(char));
             while(*p){
                 fifo_put(&l_tx, *(p++));
             }
             continue;
         }
 
-        if (d == 'c') {
-            fifo_put(&l_tx, (CHAR)va_arg(arp, int));
+        if (d == 'c') {     // print char?
+            fifo_put(&l_tx, *(char *)((arp += sizeof(char)) - sizeof(char)));
             continue;
+        }
+
+        // print number
+
+        if (d == '0') {  // Add leading zeros?
+            d = *fmt++;
+            lz = 1;
+        }
+
+        // get padding size, if specified
+        while ((d >= '0') && (d <= '9')) {
+            pad += pad * 10 + (d - '0');
+            d = *fmt++;
         }
 
         if (d == 'u') r = 10;
@@ -391,24 +388,25 @@ void xprintf(const char* fmt, ...)
         if (d == 'b') r = 2;		
         
         if (r == 0){
-            break;	
+            // default radix
+            r =  10;
         } 
 
-        if (s){
-            w = -w;  
+        if (lz){
+            pad = -pad;  
         } 
         
-        if (r > 0)
-            xpitoa((UINT)va_arg(arp, int), r, w);
-        else
-            xpitoa((SINT)va_arg(arp, int), r, w);
-        
+        if (r > 0){
+            value = *(SINT*)((arp += sizeof(SINT)) - sizeof(SINT)); 
+        }else{
+            value = *(UINT*)((arp += sizeof(UINT)) - sizeof(UINT));
+        }
+
+        xpitoa(value, r, pad);        
     }
 
-    va_end(arp);
-
-    TI = ON;
-#endif
+    //TI = ON;
+    *arp = '\0';
 }
 #if TP0_RM
 void IrqPrintf(char *str, WORD value){
