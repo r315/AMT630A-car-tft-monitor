@@ -1,20 +1,20 @@
 /***********************************************************************
-*Copyright (C) 2005 ÉîÛÚ°¬¿Æ´´ÐÂÓÐÏÞ¹«Ë¾²úÆ·Ó¦ÓÃÒ»²¿
+*Copyright (C) 2005 ï¿½ï¿½ï¿½Ú°ï¿½ï¿½Æ´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¹ï¿½Ë¾ï¿½ï¿½Æ·Ó¦ï¿½ï¿½Ò»ï¿½ï¿½
 * All rights reserved.
 
-*File name: ¡¡ dataType.h
-*Version:    ¡¡0.1
+*File name: ï¿½ï¿½ dataType.h
+*Version:    ï¿½ï¿½0.1
 *Author:       cjinzong
 *update:       20100129
 
 *Description:
-       Êý¾ÝÀàÐÍ¶¨ÒåÍ·ÎÄ¼þ
+       ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½Í·ï¿½Ä¼ï¿½
 *History:
 ************************************************************************/
 #ifndef _DATA_TYPE_H__
 #define _DATA_TYPE_H__
 
-/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<¹«¹²ÀàÐÍ¶¨Òå>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½ï¿½ï¿½>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 typedef bit 			FLAG;
 typedef bit             BIT;
 typedef bit             BOOL;
@@ -104,6 +104,7 @@ typedef void            *PVOID;
 #define DBYTE ((unsigned char volatile data  *) 0)
 #define PBYTE ((unsigned char volatile pdata *) 0)
 #define XBYTE ((unsigned char volatile xdata *) 0)
+#define IBYTE ((unsigned char volatile idata *) 0)
 
 #define CWORD ((unsigned int volatile code  *) 0)
 #define DWORD ((unsigned int volatile data  *) 0)
@@ -142,7 +143,7 @@ typedef void            *PVOID;
 
 
 
-/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<ÊÂ¼þ¿ª¹Ø>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
+/*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 #define    OFF      0
 #define    ON       1
 #define    SAVE     2
