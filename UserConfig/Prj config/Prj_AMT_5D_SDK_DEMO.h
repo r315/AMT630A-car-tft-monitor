@@ -2,10 +2,10 @@
 *Copyright (C) 2005 ���ڰ��ƴ������޹�˾��ƷӦ��һ��
 * All rights reserved.
 
-*File name: �� Prj_AMT_7D_SDK_DEMO.h
-*Version:    ��0.1
-*Author:       cjinzong
-*update:       20111208
+*File name: Prj_AMT_5D_SDK_DEMO.h
+*Version:   
+*Author:   Hugo Reis
+*update:   202102
 
 *Description:
             
@@ -19,17 +19,18 @@
 =========================================================*/
 //[Hardware function enable]
 #define BacklightEn          	//�������ʹ�ܿ���
-//#define KeyDetectEn             //�������ʹ�ܿ���
+//#define KeyDetectEn           //�������ʹ�ܿ���
 //#define IrDetectEn           	//ң�ؼ��ʹ�ܿ���
 //#define LogoEn                //Logoģ�鿪��
 //#define CarBackEn            	//����ʹ�ܿ���
+//#define CarReversingSignalDetectEn     //�źż�⵹��ʹ��
 //#define PannelSfrDispEn      	//��������ʾʹ�ܿ��� (��ת)
 //#define SpiInitPannelEn       //SPI ����ʼ��ʹ�ܿ���
 //#define CpuInitPannelEn       //Cpu ����ʼ��ʹ�ܿ���
 //#define AudioCtrlEn          	//��������ʹ�ܿ���
 //#define FmSendEn              //Fm����ʹ�ܿ���
 //#define BTEn                  //����ʹ�ܿ���
-//#define FlashEn 
+//#define FlashEn               //Use SPI Flash to store settings
 //#define PowerLedEn            //��Դָʾ��ʹ�ܿ��� 
 //#define BL_OvpSoftProtecEn    //�����ѹ�������� 
 //#define LowBaterryDetecEn     //��ص�������
@@ -42,13 +43,13 @@
 <<<<<<<<<<<<<<<<<<<<<<  ������������>>>>>>>>>>>>>>>>>>>>
 =========================================================*/
 //[Software function enable]
-#define NoSignalEn               //NoSignalģ�鿪��
+//#define NoSignalEn             //NoSignalģ�鿪��
 //#define NoSignalBLOffEn        //���źŹر��⿪��
 //#define NoSignalPowerOffEn     //���ź�һ��ʱ���Զ��ػ�����
 //#define QuickParaSaveEn        //���ٲ������濪��
-//#define NoSignalSnowEn         //���źų�ѩ������
-//#define DithingEn             //Dithingʹ�ܿ���
-//#define ColorSysChangeBLOffEn //��ʽ�л���������
+#define NoSignalSnowEn         //���źų�ѩ������
+//#define DithingEn              //Dithingʹ�ܿ���
+//#define ColorSysChangeBLOffEn  //��ʽ�л���������
 #define UartTerminal
 /*========================================================
 <<<<<<<<<<<<<<<<<<<<<   оƬ�ͺ�����>>>>>>>>>>>>>>>>>>>>>
@@ -57,7 +58,8 @@
 #define AMT_TYPE       AMT630A
 #define WebSite        "www.arkmicro.com"
 
-
+#define PANEL_WIDTH     800
+#define PANEL_HIGHT     480
 
 /*========================================================
 <<<<<<<<<<<<<<<<<<<<<<   ����ʾ����>>>>>>>>>>>>>>>>>>>>>>
@@ -86,7 +88,6 @@
 //[Video Channel]
 #define AV1                     CVBS1   //av
 #define AV2                     CVBS3   //car detect
-#define AV3                     CVBS4   //reserve
 
 #if(AV1 == CVBS1)
 #define SelAv1Channel()    	hw_SelChannelToCVBS1()
@@ -116,7 +117,7 @@
 
 //[Video Channel List]
 #define SourceOrderBuf      	{INPUT_AV1,INPUT_CAMERA_Car} 
-#define DefaultSource          INPUT_AV1
+#define DefaultSource          INPUT_CAMERA_Car //INPUT_AV1
 
 
 //[PIC display value]
@@ -235,19 +236,19 @@
 #define OSD_STYLE_TYPE         			OSD_STYLE_ARK
 
 //[OSD bar lenght]
-#define MAX_VALUE               			100    //���ֵ
+#define MAX_VALUE               		100    //���ֵ
 
 //[OSD menu X Y position]
-#define MAINMENU_START_X_POS   			0X014C      //MAIN MENU �˵���X��ʼλ��
-#define MAINMENU_START_Y_POS   			0X01BA     //MAIN MENU �˵���Y��ʼλ��
+#define MAINMENU_START_X_POS   			((PANEL_WIDTH/2) - 175)             //MAIN MENU
+#define MAINMENU_START_Y_POS   			(PANEL_HIGHT - (ICON_SIZE_Y * 4))   //MAIN MENU
 
-#define SOURCEMENU_START_X_POS 			0X032A   //SOURCE MENU �˵���X��ʼλ��
-#define SOURCEMENU_START_Y_POS 			0X001C   //SOURCE MENU �˵���Y��ʼλ��
+#define SOURCEMENU_START_X_POS 			(PANEL_WIDTH - (ICON_SIZE_X * 4))   //SOURCE MENU
+#define SOURCEMENU_START_Y_POS 			ICON_SIZE_Y                         //SOURCE MENU
 
-#define SOURCE_43_START_X_SHIFT          0X65      //SOURCE MENU �˵�4:3ģʽ ��16:9ģʽ��X��ֵ
+#define SOURCE_43_START_X_SHIFT         0x65      //SOURCE MENU �˵�4:3ģʽ ��16:9ģʽ��X��ֵ
 
-#define NOSIGNALMENU_START_X_POS 		0x014B   //NOSIGNAL MENU �˵���X��ʼλ��
-#define NOSIGNALMENU_START_Y_POS 		0x00E2   //NOSIGNAL MENU �˵���Y��ʼλ��
+#define NOSIGNALMENU_START_X_POS 		((PANEL_WIDTH/2) - (ICON_SIZE_X * 12))  //NOSIGNAL MENU
+#define NOSIGNALMENU_START_Y_POS 	    ((PANEL_HIGHT/2) - ICON_SIZE_Y)         //NOSIGNAL MENU
 
 #define BTMENU_START_X_POS 				0x0000   //BT MENU �˵���X��ʼλ��
 #define BTMENU_START_Y_POS    			0x000A   //BT MENU �˵���Y��ʼλ��
@@ -261,11 +262,11 @@
 #define MUTEMENU_START_X_POS   			0X0018   //MUTE MENU �˵���X��ʼλ��
 #define MUTEMENU_START_Y_POS   			0X0020   //MUTE MENU �˵���Y��ʼλ��
         
-#define FACTORYMENU_START_X_POS  			0X00AC   //FACTORY MENU �˵���X��ʼλ��
-#define FACTORYMENU_START_Y_POS  			0X008A   //FACTORY MENU �˵���Y��ʼλ��
+#define FACTORYMENU_START_X_POS  	    0X00AC   //FACTORY MENU �˵���X��ʼλ��
+#define FACTORYMENU_START_Y_POS  	    0X008A   //FACTORY MENU �˵���Y��ʼλ��
 
 //[OSD default language]
-#define DEFAULT_LANGUAGE        			ENGLISH//JAPANESE//CHINESE//ENGLISH  //OSD Ĭ������
+#define DEFAULT_LANGUAGE        		ENGLISH//JAPANESE//CHINESE//ENGLISH  //OSD Ĭ������
 
 //[OSD display timeout]
 #define OSD_DISP_TIME           		200     //OSD ��ʾʱ��
@@ -312,7 +313,6 @@
 #ifdef CarBackEn
 
 //#define CarReversingIODetectEn    	   //IO ��⵹��ʹ��
-#define CarReversingSignalDetectEn     //�źż�⵹��ʹ��
 
 #ifdef CarReversingIODetectEn
 #define hw_setCarBackAheadStatus  	1     		//����״̬������״̬
@@ -447,7 +447,7 @@
 =========================================================*/ 
 //[Factory PassWord]
 #ifdef FactoryEn
-#define PassWordBuf             {COMD_SelSource,COMD_SelMode,COMD_LEFT,COMD_RIGHT,COMD_RedrawMenu}
+#define PassWordBuf             {COMD_LEFT,COMD_RIGHT}
 #endif
 
 /*====================================================================================
