@@ -379,9 +379,4 @@ VideoChannel code VideoChannelPara[]=
 #define POS_DYN_NUM 12
 #define SYS_DYN_NUM 4
 #define PAD_MUX_NUM 25
-#define VCOM_AC_Def 0X00
-#define VCOM_DC_Def 0X00
-#define PWMA_VAL    0X0000
-#define PWMB_VAL    0X0000
-
 
