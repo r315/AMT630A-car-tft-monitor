@@ -24,7 +24,7 @@
 
 
 #if OSD_STYLE_TYPE != OSD_STYLE_ARK
-  "µ±Ç°OSD·ç¸ñ²»Æ¥Åä£¬ÇëÉèÖÃÎªARK OSD·ç¸ñ¡£"
+  "ï¿½ï¿½Ç°OSDï¿½ï¿½ï¿½Æ¥ï¿½ä£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªARK OSDï¿½ï¿½ï¿½"
 #endif//OSD_STYLE_TYPE == OSD_STYLE_ARK
 
 
@@ -320,7 +320,7 @@ UCHAR KeyMsgProcess(MSG curMsg)
 			break;
      }
 	 
-     //°´¼üOSD´¦Àí:
+     //ï¿½ï¿½ï¿½ï¿½OSDï¿½ï¿½ï¿½ï¿½:
 	 ucComd = FindComdInCurMenuItem(curMsg);	 
 	 return ucComd;
 }
@@ -333,7 +333,7 @@ UCHAR KeyMsgProcess(MSG curMsg)
 *state:      allright
 
 *description:   
-           ´Óµ±Ç°µÄItem ÕÒµ½ÏàÓ¦µÄÊäÈëÃüÁî£¬²¢·µ»Ø´ËÃüÁîÖµ.(MSG -> COMD) 
+           ï¿½Óµï¿½Ç°ï¿½ï¿½Item ï¿½Òµï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½Ø´ï¿½ï¿½ï¿½ï¿½ï¿½Öµ.(MSG -> COMD) 
 
 *history:
 ************************************************************/
@@ -368,7 +368,7 @@ FindComdAgain:
 			}
 	    }
 	}
-    /*±íÊ¾´Ë°´¼üÐÅÏ¢ÔÚµ±Ç°²Ëµ¥ÖÐÎÞÐ§£¬ÇÐ»»µ½¸ù²Ëµ¥*/
+    /*ï¿½ï¿½Ê¾ï¿½Ë°ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Úµï¿½Ç°ï¿½Ëµï¿½ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½*/
 	if(FindMenuPageIndex(Osd_RootMenu) != g_ucMenuPageIndex)
 	{   
 		g_ucMenuPageIndex = FindMenuPageIndex(Osd_RootMenu);
@@ -517,7 +517,7 @@ BOOL ExectComd(ComdType OpratComd)
 				g_bLogoFlg = TRUE;
 				if(IsPowerOn())
 				{
-				    if(g_sysSetting.Car.DetecMode != AV_SIGNAL_OK) //ÉÏµçµÄÊ±ºòÓÐµ¹³µÐÅºÅ²»ÏÔÊ¾LOGO
+				    if(g_sysSetting.Car.DetecMode != AV_SIGNAL_OK) //ï¿½Ïµï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½ÅºÅ²ï¿½ï¿½ï¿½Ê¾LOGO
 				   	{
 						printfStr("Osd_LogoMenu");
 						SetVDETestSwitch(LOGO_DISP_BACKCOLOR);
@@ -1085,7 +1085,7 @@ void InitOsdBlock(void)
 
 void InitOSD(void) 
 {  
-    printfStr("InitOSD\n");
+    printfStr("InitOSD");
 	OsdHide();
 	OsdClear();
 	OsdCofigPalette();
@@ -1104,11 +1104,11 @@ void InitOSD(void)
 
 /******************************************************************
 *Name: void DrawOsdTitel(TitelType *pTitel)
-*input:  pTitel  ±êÌâÖ¸Õë
-         status     ×´Ì¬: »­×´Ì¬£¬ Ñ¡Ôñ×´Ì¬£¬ 
+*input:  pTitel  ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+         status     ×´Ì¬: ï¿½ï¿½×´Ì¬ï¿½ï¿½ Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ 
 *output: void
       
-*Description: »­±êÌâº¯Êý¡£
+*Description: ï¿½ï¿½ï¿½ï¿½ï¿½âº¯ï¿½ï¿½ï¿½ï¿½
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1149,11 +1149,11 @@ void DrawOsdTitel(TitelType *pTitel,UINT status) reentrant
 
 /******************************************************************
 *Name: void DrawOsdIcon(IconType* pIcon,UCHAR status)
-*input:  pIcon  »­ICON Ö¸Õë
-         status     ×´Ì¬: »­×´Ì¬£¬ Ñ¡Ôñ×´Ì¬£¬ 
+*input:  pIcon  ï¿½ï¿½ICON Ö¸ï¿½ï¿½
+         status     ×´Ì¬: ï¿½ï¿½×´Ì¬ï¿½ï¿½ Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ 
 *output: void
       
-*Description: »­iconº¯Êý¡£
+*Description: ï¿½ï¿½iconï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1194,11 +1194,11 @@ void DrawOsdIcon(IconType* pIcon,UINT status)
 
 /******************************************************************
 *Name: void DrawOsdMenuItemNumber(DrawNumberType *pNumberItem,UCHAR status)
-*input:  pNumberItem  »­Êý×ÖÖ¸Õë
-         status     ×´Ì¬: »­×´Ì¬£¬ Ñ¡Ôñ×´Ì¬£¬ 
+*input:  pNumberItem  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ï¿½
+         status     ×´Ì¬: ï¿½ï¿½×´Ì¬ï¿½ï¿½ Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ 
 *output: void
       
-*Description: »­Êý×Ö
+*Description: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1233,11 +1233,11 @@ void DrawOsdMenuItemNumber(DrawNumberType *pNumberItem,UINT status)
 
 /******************************************************************
 *Name: void DrawOsdMenuItemGuage(DrawGuageType *pGaugeItem,UCHAR status)
-*input:  pNumberItem  »­½ø¶ÈÌõ
-         status     ×´Ì¬: »­×´Ì¬£¬ Ñ¡Ôñ×´Ì¬£¬ 
+*input:  pNumberItem  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+         status     ×´Ì¬: ï¿½ï¿½×´Ì¬ï¿½ï¿½ Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ 
 *output: void
       
-*Description: »­½ø¶ÈÌõ
+*Description: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1267,11 +1267,11 @@ void DrawOsdMenuItemGuage(DrawGuageType *pGaugeItem,UINT status)
   
 /******************************************************************
 *Name: void DrawOsdMenuItemOption(DrawOptionType *radioItem,UCHAR status)
-*input:  pNumberItem  »­Ñ¡Ïî(text)
-         status     ×´Ì¬: »­×´Ì¬£¬ Ñ¡Ôñ×´Ì¬£¬ 
+*input:  pNumberItem  ï¿½ï¿½Ñ¡ï¿½ï¿½(text)
+         status     ×´Ì¬: ï¿½ï¿½×´Ì¬ï¿½ï¿½ Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ 
 *output: void
       
-*Description: »­Ñ¡Ïî(text)
+*Description: ï¿½ï¿½Ñ¡ï¿½ï¿½(text)
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1301,11 +1301,11 @@ void DrawOsdMenuItemOption(DrawOptionType *pOptionItem,UINT status)
 }
 /******************************************************************
 *Name: void DrawOsdMenuItemValue(ItemValueType* pItemValue,UINT status)
-*input:  pItemValue  »­ITEM µÄÖµ °üÀ¨: Êý×Ö£¬½ø¶ÈÌõ £¬Ñ¡Ïî
-         status     ×´Ì¬: »­×´Ì¬£¬ Ñ¡Ôñ×´Ì¬£¬ 
+*input:  pItemValue  ï¿½ï¿½ITEM ï¿½ï¿½Öµ ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ñ¡ï¿½ï¿½
+         status     ×´Ì¬: ï¿½ï¿½×´Ì¬ï¿½ï¿½ Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ 
 *output: void
       
-*Description: »­ITEM µÄÖµ °üÀ¨: Êý×Ö£¬½ø¶ÈÌõ £¬Ñ¡Ïî
+*Description: ï¿½ï¿½ITEM ï¿½ï¿½Öµ ï¿½ï¿½ï¿½ï¿½: ï¿½ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ñ¡ï¿½ï¿½
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1339,11 +1339,11 @@ void DrawOsdMenuItemValue(ItemValueType* pItemValue,UINT status)
 }
 /******************************************************************
 *Name: DrawOsdMenuItem(MenuItemType *pMenuItem,UINT status)
-*input:  pMenuItem  ²Ëµ¥ÌõÄ¿Ö¸Õë£¬
-         status     ×´Ì¬: »­×´Ì¬£¬ Ñ¡Ôñ×´Ì¬£¬ 
+*input:  pMenuItem  ï¿½Ëµï¿½ï¿½ï¿½Ä¿Ö¸ï¿½ë£¬
+         status     ×´Ì¬: ï¿½ï¿½×´Ì¬ï¿½ï¿½ Ñ¡ï¿½ï¿½×´Ì¬ï¿½ï¿½ 
 *output: void
       
-*Description: »­²Ëµ¥ÌõÄ¿
+*Description: ï¿½ï¿½ï¿½Ëµï¿½ï¿½ï¿½Ä¿
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1351,13 +1351,13 @@ void DrawOsdMenuItem(MenuItemType *pMenuItem,UINT status) reentrant
 {
     AdjustType  wcDrawItemCdtion;
 
-	//Ê×ÏÈÅÐ¶Ï»­´Ë²Ëµ¥µÄÌõ¼þ¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï»ï¿½ï¿½Ë²Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     if(pMenuItem->CheckCondition)
     {
         wcDrawItemCdtion = pMenuItem->CheckCondition();
     }
 
-    //ÅÐ¶ÏÊÇ·ñÓÐ¸öÐÔ·ç¸ñ
+    //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½Ð¸ï¿½ï¿½Ô·ï¿½ï¿½
 	if(pMenuItem->DrawItemStyle)
 	{
 	    pMenuItem->DrawItemStyle();
@@ -1380,7 +1380,7 @@ void DrawOsdMenuItem(MenuItemType *pMenuItem,UINT status) reentrant
 *input:  void
 *output: void
       
-*Description: »­²Ëµ¥
+*Description: ï¿½ï¿½ï¿½Ëµï¿½
 
 *history: 1.Jordan.chen   2012/02/21    1.0    buil   this  function
 *******************************************************************/
@@ -1391,12 +1391,12 @@ void DrawOsdMenu(void)
 
 	printfStr(CurrentMenu->MenuName);
 
-	//Ê×ÏÈÅÐ¶Ï»­´Ë²Ëµ¥µÄÌõ¼þ¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï»ï¿½ï¿½Ë²Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     if(CurrentMenu->CheckCondition)
     {
         wcDrawMenuCdtion = CurrentMenu->CheckCondition();
 	}
-    //ÅÐ¶ÏÊÇ·ñÐèÒªÒþ²Ø¡£
+    //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ø¡ï¿½
 	if(CurrentMenu->Flags & osdInvisible)
 	{
 	    HideMenu();
@@ -1404,7 +1404,7 @@ void DrawOsdMenu(void)
 	}
 	else
 	{
-	    //ÅÐ¶ÏÊÇ·ñÐèÒª³õÊ¼»¯:ÖØÐÂÉè¶¨´óÐ¡µÈ¡£¡£
+	    //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¼ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Ð¡ï¿½È¡ï¿½ï¿½ï¿½
 	    if((CurrentMenu->Flags & osdRedraw)&&(wcDrawMenuCdtion.Flags & osdVisible))
 		{
 	        //printfStr("redraw osd menu");
@@ -1446,12 +1446,12 @@ void DrawSpecialOsdMenu(void)
 
 	printfStr(CurrentMenu->MenuName);
 
-	//Ê×ÏÈÅÐ¶Ï»­´Ë²Ëµ¥µÄÌõ¼þ¡£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶Ï»ï¿½ï¿½Ë²Ëµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     if(CurrentMenu->CheckCondition)
     {
         wcDrawMenuCdtion = CurrentMenu->CheckCondition();
 	}
-    //ÅÐ¶ÏÊÇ·ñÐèÒªÒþ²Ø¡£
+    //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Ø¡ï¿½
 	if(CurrentMenu->Flags & osdInvisible)
 	{
 	    HideMenu();
@@ -1459,7 +1459,7 @@ void DrawSpecialOsdMenu(void)
 	}
 	else
 	{
-	    //ÅÐ¶ÏÊÇ·ñÐèÒª³õÊ¼»¯:ÖØÐÂÉè¶¨´óÐ¡µÈ¡£¡£
+	    //ï¿½Ð¶ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½Ê¼ï¿½ï¿½:ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½Ð¡ï¿½È¡ï¿½ï¿½ï¿½
 	    if((CurrentMenu->Flags & osdRedraw)&&(wcDrawMenuCdtion.Flags & osdVisible))
 		{
 	        printfStr("redraw special osd menu");

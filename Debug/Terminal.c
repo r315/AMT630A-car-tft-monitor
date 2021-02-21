@@ -143,21 +143,21 @@ void TERM_Handler(){
                     pstr = &l_buf[2];
                     value1 = atoh(&pstr);
                     value2 = CBYTE[value1];
-                    xprintf("\nCODE %04X = %02X\n", value1, value2);
+                    xprintf("CODE[%04X] = %02X\n", value1, value2);
                     break;                
 
                 case ('r' << 8) + 'i':
                     pstr = &l_buf[2];
                     value1 = atoh(&pstr);
                     value2 = IBYTE[value1];
-                    xprintf("\nIDATA %04X = %02X\n", value1, value2);
+                    xprintf("IDATA[%02X] = %02X\n", value1, value2);
                     break;
 
                 case ('r' << 8) + 'x':
                     pstr = &l_buf[2];
                     value1 = atoh(&pstr);
                     value2 = XBYTE[value1];
-                    xprintf("\nXDATA %04X = %02X\n", value1, value2);
+                    xprintf("XDATA[%04X] = %02X\n", value1, value2);
                     break;               
 
                 case ('w' << 8) + 'x':
@@ -166,7 +166,7 @@ void TERM_Handler(){
                     pstr++;
                     value2 = atoh(&pstr);
                     XBYTE[value1] = (BYTE)value2;
-                    xprintf("\nWrite XDATA %04X = %02X\n", value1, value2);
+                    xprintf("XDATA[%04X] = %02X\n", value1, value2);
                     break;
 
                 case ('w' << 8) + 'i':
@@ -175,7 +175,7 @@ void TERM_Handler(){
                     pstr++;
                     value2 = atoh(&pstr);
                     IBYTE[value1] = (BYTE)value2;
-                    xprintf("\nWrite IDATA %04X = %02X\n", value1, value2);
+                    xprintf("IDATA[%02X] = %02X\n", value1, value2);
                     break;
 
                 default: 
@@ -184,19 +184,15 @@ void TERM_Handler(){
             break;
         }
 
-        case 'b':
-        {
-            if(g_bBackLightFlg){
-                TurnOffBackLight();
-            }else{
-                TurnOnBackLight();
-            }
-            break;
-        }
-
         case 'Z':
         {
             l_msg = MSG_UPK_MENU;
+            break;
+        }
+
+        case 'F':
+        {
+            l_msg = MSG_UPK_POWER;
             break;
         }
 
@@ -236,7 +232,7 @@ void TERM_Handler(){
             break;
         }
 
-        case 'v':
+        case 'V':
         {
             l_msg = MSG_UPK_SOURCE_SWITCH;
             break;
