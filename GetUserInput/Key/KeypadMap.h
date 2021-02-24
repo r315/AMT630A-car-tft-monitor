@@ -27,19 +27,19 @@
 
 #if(ADCKEY_PAD_ID == KP_ARK_DEBUG_V01)
 //key val : adcCh + adcVal
-#define hw_KEY_POWER    	makeUint16 (CH0, hw_keyAdcVal(0))
-#define hw_KEY_SOURCE     	makeUint16 (CH0, hw_keyAdcVal(27000))
-#define hw_KEY_MENU   		makeUint16 (CH0, hw_keyAdcVal(0xB0))
-#define hw_KEY_LEFT     	makeUint16 (CH0, hw_keyAdcVal(0x80)))
-#define hw_KEY_RIGHT    	makeUint16 (CH0, hw_keyAdcVal(0x50))
+#define hw_KEY_POWER      makeUint16 (CH0, hw_keyAdcVal(0))		// down resistance 
+#define hw_KEY_SOURCE     makeUint16 (CH0, hw_keyAdcVal(0))
+#define hw_KEY_MENU       makeUint16 (CH0, hw_keyAdcVal(4700)) 
+#define hw_KEY_LEFT       makeUint16 (CH0, hw_keyAdcVal(2000))
+#define hw_KEY_RIGHT      makeUint16 (CH0, hw_keyAdcVal(1000))
 
 
 //ADC Key Cmd Map
-#define AdcKeyCmdMap  {hw_KEY_POWER,     KEY_POWER        },\
-	                  {hw_KEY_SOURCE,    KEY_SOURCE_SWITCH},\
-                      {hw_KEY_LEFT ,	   KEY_LEFT       },\
-                      {hw_KEY_MENU,      KEY_MENU         },\
-                      {hw_KEY_RIGHT ,	   KEY_RIGHT      },
+#define AdcKeyCmdMap  {hw_KEY_POWER,  KEY_POWER        },\
+	                    {hw_KEY_SOURCE, KEY_SOURCE_SWITCH},\
+                      {hw_KEY_LEFT,   KEY_LEFT         },\
+                      {hw_KEY_MENU,   KEY_MENU         },\
+                      {hw_KEY_RIGHT,  KEY_RIGHT        },
 
 
 #endif// #if(ADCKEY_PAD_ID == KP_ARK_DEBUG_V01)
